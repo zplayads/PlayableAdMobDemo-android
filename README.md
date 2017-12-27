@@ -1,4 +1,4 @@
-前提：天朝用户请注意，满足手机装有google play并且可访问google官网（翻墙）后才能接入google广告，不然会一直提示网络错误。
+前提：中国大陆用户请注意，满足手机装有google play并且可访问google官网（翻墙）后才能接入google广告，不然会一直提示网络错误。
 
 ## 一 接入可玩广告SDK和AdMob SDK
 以Android Studio为例，其它平台请查看可玩广告接入文档，AdMob SDK接入文档，以下简要步骤
