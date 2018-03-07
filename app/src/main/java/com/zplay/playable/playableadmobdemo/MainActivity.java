@@ -1,9 +1,13 @@
 package com.zplay.playable.playableadmobdemo;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
@@ -12,8 +16,12 @@ import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
 public class MainActivity extends AppCompatActivity implements RewardedVideoAdListener {
+    private static final String TAG = "MainActivity";
 
     private RewardedVideoAd mRewardedVideoAd;
+
+    View mProgressBar;
+    TextView mLogView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,18 +29,27 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
         setContentView(R.layout.activity_main);
         MobileAds.initialize(this, "ca-app-pub-5451364651863658~6691926353");
 
+        mProgressBar = findViewById(R.id.loading_bar);
+        mLogView = findViewById(R.id.log_text);
+
         // Use an activity context to get the rewarded video instance.
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
         mRewardedVideoAd.setRewardedVideoAdListener(this);
     }
 
     public void loadAd(View view) {
+        mLogView.setText("");
+        mProgressBar.setVisibility(View.VISIBLE);
+        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED ||
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED   ){
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE}, 0);
+        }
         AdRequest request = new AdRequest.Builder().build();
         mRewardedVideoAd.loadAd("ca-app-pub-5451364651863658/6193232902", request);
-        Toast.makeText(this, "start loading ad", Toast.LENGTH_SHORT).show();
+        addLog("start loading ad");
     }
 
-    void displayAd(View v) {
+    public void displayAd(View v) {
         if (mRewardedVideoAd.isLoaded()) {
             mRewardedVideoAd.show();
         }
@@ -40,39 +57,40 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
 
     @Override
     public void onRewarded(RewardItem reward) {
-        Toast.makeText(this, "onRewarded! currency: " + reward.getType() + "  amount: " +
-                reward.getAmount(), Toast.LENGTH_SHORT).show();
+        addLog("onRewarded! currency: " + reward.getType() + "  amount: " +
+                reward.getAmount());
     }
 
     @Override
     public void onRewardedVideoAdLeftApplication() {
-        Toast.makeText(this, "onRewardedVideoAdLeftApplication",
-                Toast.LENGTH_SHORT).show();
+        addLog("onRewardedVideoAdLeftApplication");
     }
 
     @Override
     public void onRewardedVideoAdClosed() {
-        Toast.makeText(this, "onRewardedVideoAdClosed", Toast.LENGTH_SHORT).show();
+        addLog("onRewardedVideoAdClosed");
     }
 
     @Override
     public void onRewardedVideoAdFailedToLoad(int errorCode) {
-        Toast.makeText(this, "onRewardedVideoAdFailedToLoad", Toast.LENGTH_SHORT).show();
+        mProgressBar.setVisibility(View.GONE);
+        addLog("onRewardedVideoAdFailedToLoad error code: " + errorCode);
     }
 
     @Override
     public void onRewardedVideoAdLoaded() {
-        Toast.makeText(this, "onRewardedVideoAdLoaded", Toast.LENGTH_SHORT).show();
+        mProgressBar.setVisibility(View.GONE);
+        addLog("onRewardedVideoAdLoaded");
     }
 
     @Override
     public void onRewardedVideoAdOpened() {
-        Toast.makeText(this, "onRewardedVideoAdOpened", Toast.LENGTH_SHORT).show();
+        addLog("onRewardedVideoAdOpened");
     }
 
     @Override
     public void onRewardedVideoStarted() {
-        Toast.makeText(this, "onRewardedVideoStarted", Toast.LENGTH_SHORT).show();
+        addLog("onRewardedVideoStarted");
     }
 
     @Override
@@ -91,5 +109,10 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
     public void onDestroy() {
         super.onDestroy();
         mRewardedVideoAd.destroy(this);
+    }
+
+    void addLog(String msg) {
+        Log.d(TAG, msg);
+        mLogView.append("\n" + msg);
     }
 }

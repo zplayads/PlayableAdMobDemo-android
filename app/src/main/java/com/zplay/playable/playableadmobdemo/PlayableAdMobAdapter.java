@@ -11,6 +11,7 @@ import com.google.android.gms.ads.reward.mediation.MediationRewardedVideoAdListe
 import com.playableads.PlayPreloadingListener;
 import com.playableads.PlayableAds;
 import com.playableads.SimplePlayLoadingListener;
+import com.playableads.constants.StatusCode;
 
 /**
  * Description: 不要修改
@@ -29,12 +30,18 @@ public class PlayableAdMobAdapter implements MediationRewardedVideoAdAdapter {
     public void initialize(Context context, MediationAdRequest mediationAdRequest, String s, MediationRewardedVideoAdListener mediationRewardedVideoAdListener, Bundle serverParameters, Bundle bundle1) {
         resetIds(serverParameters);
         pAd = PlayableAds.init(context, paAppId);
+        pAd.setAutoLoadAd(false);
         mRewardedVideoEventForwarder = mediationRewardedVideoAdListener;
+        loadAd();
     }
 
     @Override
     public void loadAd(MediationAdRequest mediationAdRequest, Bundle serverParameters, Bundle bundle1) {
         resetIds(serverParameters);
+        loadAd();
+    }
+
+    private void loadAd() {
         pAd.requestPlayableAds(paAdUnitId, new PlayPreloadingListener() {
             @Override
             public void onLoadFinished() {
@@ -43,7 +50,11 @@ public class PlayableAdMobAdapter implements MediationRewardedVideoAdAdapter {
 
             @Override
             public void onLoadFailed(int i, String s) {
-                mRewardedVideoEventForwarder.onAdFailedToLoad(PlayableAdMobAdapter.this, 0);
+                if (i == StatusCode.PRELOAD_FILLED.code) {
+                    mRewardedVideoEventForwarder.onAdLoaded(PlayableAdMobAdapter.this);
+                } else {
+                    mRewardedVideoEventForwarder.onAdFailedToLoad(PlayableAdMobAdapter.this, 0);
+                }
             }
         });
     }
@@ -57,6 +68,7 @@ public class PlayableAdMobAdapter implements MediationRewardedVideoAdAdapter {
                 }
 
                 public void onAdsError(int var1, String var2) {
+                    Log.d(TAG, "presentPlayableAD error code: " + var1 + ", " + var2);
                     mRewardedVideoEventForwarder.onAdFailedToLoad(PlayableAdMobAdapter.this, 0);
                 }
             });
