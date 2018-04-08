@@ -18,8 +18,8 @@ import com.playableads.SimplePlayLoadingListener;
  */
 
 @SuppressWarnings("unused")
-public class PlayableAdMobAdapter implements MediationRewardedVideoAdAdapter {
-    private static final String TAG = "PlayableAdMobAdapter";
+public class ZPLAYAdsAdMobAdapter implements MediationRewardedVideoAdAdapter {
+    private static final String TAG = "ZPLAYAdsAdMobAdapter";
     private String paAppId;
     private String paAdUnitId;
     private PlayableAds pAd;
@@ -32,7 +32,7 @@ public class PlayableAdMobAdapter implements MediationRewardedVideoAdAdapter {
         pAd.setAutoLoadAd(false);
         pAd.enableAutoRequestPermissions(true);
         mRewardedVideoEventForwarder = mediationRewardedVideoAdListener;
-        mRewardedVideoEventForwarder.onInitializationSucceeded(PlayableAdMobAdapter.this);
+        mRewardedVideoEventForwarder.onInitializationSucceeded(ZPLAYAdsAdMobAdapter.this);
     }
 
     @Override
@@ -45,12 +45,12 @@ public class PlayableAdMobAdapter implements MediationRewardedVideoAdAdapter {
         pAd.requestPlayableAds(paAdUnitId, new PlayPreloadingListener() {
             @Override
             public void onLoadFinished() {
-                mRewardedVideoEventForwarder.onAdLoaded(PlayableAdMobAdapter.this);
+                mRewardedVideoEventForwarder.onAdLoaded(ZPLAYAdsAdMobAdapter.this);
             }
 
             @Override
             public void onLoadFailed(int i, String s) {
-                mRewardedVideoEventForwarder.onAdFailedToLoad(PlayableAdMobAdapter.this, 0);
+                mRewardedVideoEventForwarder.onAdFailedToLoad(ZPLAYAdsAdMobAdapter.this, 0);
             }
         });
     }
@@ -58,24 +58,24 @@ public class PlayableAdMobAdapter implements MediationRewardedVideoAdAdapter {
     @Override
     public void showVideo() {
         if (pAd.canPresentAd(paAdUnitId)) {
-            mRewardedVideoEventForwarder.onAdOpened(PlayableAdMobAdapter.this);
+            mRewardedVideoEventForwarder.onAdOpened(ZPLAYAdsAdMobAdapter.this);
             pAd.presentPlayableAD(paAdUnitId, new SimplePlayLoadingListener() {
                 public void playableAdsIncentive() {
-                    mRewardedVideoEventForwarder.onRewarded(PlayableAdMobAdapter.this, null);
+                    mRewardedVideoEventForwarder.onRewarded(ZPLAYAdsAdMobAdapter.this, null);
                 }
 
                 public void onAdsError(int var1, String var2) {
-                    mRewardedVideoEventForwarder.onAdFailedToLoad(PlayableAdMobAdapter.this, 0);
+                    mRewardedVideoEventForwarder.onAdFailedToLoad(ZPLAYAdsAdMobAdapter.this, 0);
                 }
 
                 @Override
                 public void onVideoStart() {
-                    mRewardedVideoEventForwarder.onVideoStarted(PlayableAdMobAdapter.this);
+                    mRewardedVideoEventForwarder.onVideoStarted(ZPLAYAdsAdMobAdapter.this);
                 }
 
                 @Override
                 public void onAdClosed() {
-                    mRewardedVideoEventForwarder.onAdClosed(PlayableAdMobAdapter.this);
+                    mRewardedVideoEventForwarder.onAdClosed(ZPLAYAdsAdMobAdapter.this);
                 }
             });
         }

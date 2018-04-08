@@ -1,4 +1,4 @@
-前提：中国大陆用户请注意，满足手机装有Google Play并且可访问Google官网（翻墙）后才能接入Admob广告，不然会一直提示网络错误。
+前提：中国大陆用户请注意，满足手机装有Google Play并且可访问Google官网（翻墙）后才能接入Admob广告，不然可能会提示网络错误。
 
 ## 一 接入ZPLAY Ads SDK和AdMob SDK
 以Android Studio为例，其它平台请查看ZPLAY Ads接入文档及AdMob SDK接入文档，以下简要步骤
@@ -6,24 +6,24 @@
 在app Module下添加
 ```
 dependencies {
-compile 'com.playableads:playableads:2.0.2'
+    compile 'com.playableads:playableads:2.0.3'
 }
 ```
 ### 2. 添加AdMob广告SDK依赖
 a. 在project构建文件(gradle)中的allprojects.repositories结点添加以下代码
 ```
 maven {
-url "https://maven.google.com"
+    url "https://maven.google.com"
 }
 ```
 使其看起来像：
 ```
 allprojects {
-repositories {     
-maven {
-url "https://maven.google.com"
-}
-}
+    repositories {     
+        maven {
+            url "https://maven.google.com"
+        }
+    }
 }
 ```
 b. 在app Module下添加
@@ -61,7 +61,7 @@ c. 添加适配类信息，以便传递ZPLAY Ads应用ID和广告位ID
 ![img](imgs/image12.png)
 d. 添加广告源名称，此处以Playable Network为例，可根据需求自定义
 ![img](imgs/image13.png)
-e. 添加适配类以及ZPLAY Ads应用ID（如androidDemoApp）和广告位ID（如androidDemoAdUnit），适配类在目录三中介绍。
+e. 添加适配类以及ZPLAY Ads应用ID（如5C5419C7-A2DE-88BC-A311-C3E7A646F6AF）和广告位ID（如3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC），适配类在目录三中介绍。
 ![img](imgs/image14.png)
 
 注：您在测试中可使用如下ID进行测试，测试ID不会产生收益，应用上线时请使用您申请的正式id。
@@ -82,10 +82,10 @@ c. 点击“ADD AD UNITS”将广告位添加ZPLAY Ads广告源
 ![img](imgs/image18.png)
 d. 选择已有的激励视频广告位，点击“CONTINUE”，进行适配类设置
 ![img](imgs/image19.png)
-e. 设置适配类，根据实际情况进行填写，点击“DONE”完成广告源配置
-![img](imgs/image20.png)
-f. 保存
+e. 设置适配类，根据实际情况进行填写，与步骤2-e类似
+
+f. 配制完成如图所示
 ![img](imgs/image21.png)
 g. 此时，OldRewardedUnit的三方广告源为1，广告源添加完成
 ![img](imgs/image22.png)
-## 三 适配类与请求请参考DEMO
+## 三 [适配类](./app/src/main/java/com/zplay/playable/playableadmobdemo/MainActivity.java)与请求请参考[DEMO](https://github.com/zplayads/PlayableAdMobDemo-android)
