@@ -77,6 +77,11 @@ public class ZPLAYAdsAdMobAdapter implements MediationRewardedVideoAdAdapter {
                 public void onAdClosed() {
                     mRewardedVideoEventForwarder.onAdClosed(ZPLAYAdsAdMobAdapter.this);
                 }
+
+                @Override
+                public void onLandingPageInstallBtnClicked() {
+                    mRewardedVideoEventForwarder.onAdClicked(ZPLAYAdsAdMobAdapter.this);
+                }
             });
         }
     }
