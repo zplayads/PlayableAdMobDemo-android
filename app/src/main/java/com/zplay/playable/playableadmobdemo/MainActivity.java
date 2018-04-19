@@ -17,6 +17,8 @@ import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
 public class MainActivity extends AppCompatActivity implements RewardedVideoAdListener {
     private static final String TAG = "MainActivity";
+    private static final String AD_MOB_APP_ID = "ca-app-pub-5451364651863658~6691926353";
+    private static final String AD_MOB_AD_UNIT_ID = "ca-app-pub-5451364651863658/6193232902";
 
     private RewardedVideoAd mRewardedVideoAd;
 
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        MobileAds.initialize(this, "ca-app-pub-5451364651863658~6691926353");
+        MobileAds.initialize(this, AD_MOB_APP_ID);
 
         mProgressBar = findViewById(R.id.loading_bar);
         mLogView = findViewById(R.id.log_text);
@@ -40,12 +42,12 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
     public void loadAd(View view) {
         mLogView.setText("");
         mProgressBar.setVisibility(View.VISIBLE);
-        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED ||
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED   ){
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED ||
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE}, 0);
         }
         AdRequest request = new AdRequest.Builder().build();
-        mRewardedVideoAd.loadAd("ca-app-pub-5451364651863658/6193232902", request);
+        mRewardedVideoAd.loadAd(AD_MOB_AD_UNIT_ID, request);
         addLog("start loading ad");
     }
 
@@ -112,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements RewardedVideoAdLi
     }
 
     void addLog(String msg) {
-        Log.d(TAG, msg);
+        Log.d(TAG, "AdMobDemo=> " + msg);
         mLogView.append("\n" + msg);
     }
 }
