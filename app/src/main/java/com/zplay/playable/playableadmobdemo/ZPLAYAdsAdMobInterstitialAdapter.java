@@ -56,8 +56,6 @@ public class ZPLAYAdsAdMobInterstitialAdapter implements CustomEventInterstitial
         if (pAd.canPresentAd(paAdUnitId)) {
             mMediationInterstitialListener.onAdOpened();
             pAd.presentPlayableAD(paAdUnitId, new SimplePlayLoadingListener() {
-                public void playableAdsIncentive() {
-                }
 
                 public void onAdsError(int var1, String var2) {
                     mMediationInterstitialListener.onAdFailedToLoad( 0);
@@ -66,7 +64,6 @@ public class ZPLAYAdsAdMobInterstitialAdapter implements CustomEventInterstitial
 
                 @Override
                 public void onVideoStart() {
-                    mMediationInterstitialListener.onAdOpened();
                     Log.e(TAG, "onVideoStart");
                 }
 

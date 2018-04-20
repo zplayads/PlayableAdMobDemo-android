@@ -94,6 +94,11 @@ public class InterstitialActivity extends Activity {
                 mProgressBar.setVisibility(View.GONE);
                 addLog("onAdFailedToLoad errorCode:"+errorCode);
             }
+            @Override
+            public void onAdClicked() {
+                super.onAdClicked();
+                addLog("onAdClicked");
+            }
         };
     }
 
