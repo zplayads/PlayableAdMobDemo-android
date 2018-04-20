@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PlayableAdMobDemo</string>
+    <string name="title_activity_interstitial">InterstitialActivity</string>
+    <string name="title_activity_rewarded_video">RewardedVideo</string>
 </resources>

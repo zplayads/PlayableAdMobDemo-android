@@ -16,6 +16,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".InterstitialActivity"
+            android:label="@string/title_activity_interstitial"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RewardedVideoActivity"
+            android:label="@string/title_activity_rewarded_video"></activity>
     </application>
 
 </manifest>
