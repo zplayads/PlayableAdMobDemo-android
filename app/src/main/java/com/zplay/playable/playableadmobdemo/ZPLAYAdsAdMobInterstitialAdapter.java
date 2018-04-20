@@ -25,6 +25,7 @@ public class ZPLAYAdsAdMobInterstitialAdapter implements MediationInterstitialAd
     @Override
     public void requestInterstitialAd(Context context, MediationInterstitialListener mediationInterstitialListener, Bundle serverParameters, MediationAdRequest mediationAdRequest, Bundle bundle1) {
         try {
+            Log.e(TAG, "requestInterstitialAd");
             resetIds(serverParameters);
             pAd = PlayableAds.init(context, paAppId);
             pAd.setAutoLoadAd(false);
@@ -34,11 +35,13 @@ public class ZPLAYAdsAdMobInterstitialAdapter implements MediationInterstitialAd
                 @Override
                 public void onLoadFinished() {
                     mMediationInterstitialListener.onAdLoaded(ZPLAYAdsAdMobInterstitialAdapter.this);
+                    Log.e(TAG, "onLoadFinished");
                 }
 
                 @Override
                 public void onLoadFailed(int i, String s) {
                     mMediationInterstitialListener.onAdFailedToLoad(ZPLAYAdsAdMobInterstitialAdapter.this, 0);
+                    Log.e(TAG, "onLoadFailed");
                 }
             });
         } catch (IllegalArgumentException e) {
@@ -60,21 +63,25 @@ public class ZPLAYAdsAdMobInterstitialAdapter implements MediationInterstitialAd
 
                 public void onAdsError(int var1, String var2) {
                     mMediationInterstitialListener.onAdFailedToLoad(ZPLAYAdsAdMobInterstitialAdapter.this, 0);
+                    Log.e(TAG, "onAdsError");
                 }
 
                 @Override
                 public void onVideoStart() {
                     mMediationInterstitialListener.onAdOpened(ZPLAYAdsAdMobInterstitialAdapter.this);
+                    Log.e(TAG, "onVideoStart");
                 }
 
                 @Override
                 public void onAdClosed() {
                     mMediationInterstitialListener.onAdClosed(ZPLAYAdsAdMobInterstitialAdapter.this);
+                    Log.e(TAG, "onAdClosed");
                 }
 
                 @Override
                 public void onLandingPageInstallBtnClicked() {
                     mMediationInterstitialListener.onAdClicked(ZPLAYAdsAdMobInterstitialAdapter.this);
+                    Log.e(TAG, "onLandingPageInstallBtnClicked");
                 }
 
             });

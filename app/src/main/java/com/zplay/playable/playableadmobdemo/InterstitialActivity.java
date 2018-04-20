@@ -12,12 +12,16 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 
 public class InterstitialActivity extends Activity {
 
     private static final String TAG = "InterstitialActivity";
-    private static final String AD_MOB_APP_ID = "ca-app-pub-9124866175748792~7390209240";
-    private static final String AD_MOB_AD_UNIT_ID = "ca-app-pub-9124866175748792/1806710077";
+//    private static final String AD_MOB_APP_ID = "ca-app-pub-9124866175748792~7390209240";
+//    private static final String AD_MOB_AD_UNIT_ID = "ca-app-pub-9124866175748792/1806710077";
+
+    private static final String AD_MOB_APP_ID = "ca-app-pub-5451364651863658~6691926353";
+    private static final String AD_MOB_AD_UNIT_ID = "ca-app-pub-5451364651863658/6174288359";
 
     private InterstitialAd mInterstitialAd;
     private AdListener adListener;
@@ -32,6 +36,7 @@ public class InterstitialActivity extends Activity {
         mLogView = findViewById(R.id.log_text);
         createAdListener();
         if (mInterstitialAd == null) {
+            MobileAds.initialize(this,AD_MOB_APP_ID);
             mInterstitialAd = new InterstitialAd(this);
             mInterstitialAd.setAdUnitId(AD_MOB_AD_UNIT_ID);
             mInterstitialAd.setAdListener(adListener);
