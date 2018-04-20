@@ -7,48 +7,46 @@ import android.util.Log;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.mediation.MediationAdRequest;
-import com.google.android.gms.ads.mediation.MediationInterstitialAdapter;
-import com.google.android.gms.ads.mediation.MediationInterstitialListener;
+import com.google.android.gms.ads.mediation.customevent.CustomEventInterstitial;
+import com.google.android.gms.ads.mediation.customevent.CustomEventInterstitialListener;
 import com.playableads.PlayPreloadingListener;
 import com.playableads.PlayableAds;
 import com.playableads.SimplePlayLoadingListener;
 
 
 @SuppressWarnings("unused")
-public class ZPLAYAdsAdMobInterstitialAdapter implements MediationInterstitialAdapter {
+public class ZPLAYAdsAdMobInterstitialAdapter implements CustomEventInterstitial {
     private static final String TAG = "ZPLAYAdsAdMobAdapter";
     private String paAppId;
     private String paAdUnitId;
     private PlayableAds pAd;
-    private MediationInterstitialListener mMediationInterstitialListener;
+    private CustomEventInterstitialListener mMediationInterstitialListener;
 
     @Override
-    public void requestInterstitialAd(Context context, MediationInterstitialListener mediationInterstitialListener, Bundle serverParameters, MediationAdRequest mediationAdRequest, Bundle bundle1) {
+    public void requestInterstitialAd(Context context, CustomEventInterstitialListener listener, String serverParameter, MediationAdRequest mediationAdRequest, Bundle customEventExtras) {
         try {
             Log.e(TAG, "requestInterstitialAd");
-            resetIds(serverParameters);
+            resetIds(serverParameter);
             pAd = PlayableAds.init(context, paAppId);
             pAd.setAutoLoadAd(false);
             pAd.enableAutoRequestPermissions(true);
-            mMediationInterstitialListener = mediationInterstitialListener;
+            mMediationInterstitialListener = listener;
             pAd.requestPlayableAds(paAdUnitId, new PlayPreloadingListener() {
                 @Override
                 public void onLoadFinished() {
-                    mMediationInterstitialListener.onAdLoaded(ZPLAYAdsAdMobInterstitialAdapter.this);
+                    mMediationInterstitialListener.onAdLoaded();
                     Log.e(TAG, "onLoadFinished");
                 }
 
                 @Override
                 public void onLoadFailed(int i, String s) {
-                    mMediationInterstitialListener.onAdFailedToLoad(ZPLAYAdsAdMobInterstitialAdapter.this, 0);
+                    mMediationInterstitialListener.onAdFailedToLoad(i);
                     Log.e(TAG, "onLoadFailed");
                 }
             });
         } catch (IllegalArgumentException e) {
-            if (mediationInterstitialListener != null) {
-                mediationInterstitialListener
-                        .onAdFailedToLoad(ZPLAYAdsAdMobInterstitialAdapter.this,
-                                AdRequest.ERROR_CODE_INVALID_REQUEST);
+            if (mMediationInterstitialListener != null) {
+                mMediationInterstitialListener.onAdFailedToLoad(AdRequest.ERROR_CODE_INVALID_REQUEST);
             }
         }
     }
@@ -56,31 +54,31 @@ public class ZPLAYAdsAdMobInterstitialAdapter implements MediationInterstitialAd
     @Override
     public void showInterstitial() {
         if (pAd.canPresentAd(paAdUnitId)) {
-            mMediationInterstitialListener.onAdOpened(ZPLAYAdsAdMobInterstitialAdapter.this);
+            mMediationInterstitialListener.onAdOpened();
             pAd.presentPlayableAD(paAdUnitId, new SimplePlayLoadingListener() {
                 public void playableAdsIncentive() {
                 }
 
                 public void onAdsError(int var1, String var2) {
-                    mMediationInterstitialListener.onAdFailedToLoad(ZPLAYAdsAdMobInterstitialAdapter.this, 0);
+                    mMediationInterstitialListener.onAdFailedToLoad( 0);
                     Log.e(TAG, "onAdsError");
                 }
 
                 @Override
                 public void onVideoStart() {
-                    mMediationInterstitialListener.onAdOpened(ZPLAYAdsAdMobInterstitialAdapter.this);
+                    mMediationInterstitialListener.onAdOpened();
                     Log.e(TAG, "onVideoStart");
                 }
 
                 @Override
                 public void onAdClosed() {
-                    mMediationInterstitialListener.onAdClosed(ZPLAYAdsAdMobInterstitialAdapter.this);
+                    mMediationInterstitialListener.onAdClosed();
                     Log.e(TAG, "onAdClosed");
                 }
 
                 @Override
                 public void onLandingPageInstallBtnClicked() {
-                    mMediationInterstitialListener.onAdClicked(ZPLAYAdsAdMobInterstitialAdapter.this);
+                    mMediationInterstitialListener.onAdClicked();
                     Log.e(TAG, "onLandingPageInstallBtnClicked");
                 }
 
@@ -104,8 +102,7 @@ public class ZPLAYAdsAdMobInterstitialAdapter implements MediationInterstitialAd
     }
 
 
-    private void resetIds(@NonNull Bundle param) {
-        String parameters = param.getString("parameter");
+    private void resetIds(@NonNull String parameters) {
         if (parameters == null) {
             Log.e(TAG, "check parameter from AdMob web");
             return;

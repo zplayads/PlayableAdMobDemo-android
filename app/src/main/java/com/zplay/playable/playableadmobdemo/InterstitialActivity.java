@@ -17,9 +17,6 @@ import com.google.android.gms.ads.MobileAds;
 public class InterstitialActivity extends Activity {
 
     private static final String TAG = "InterstitialActivity";
-//    private static final String AD_MOB_APP_ID = "ca-app-pub-9124866175748792~7390209240";
-//    private static final String AD_MOB_AD_UNIT_ID = "ca-app-pub-9124866175748792/1806710077";
-
     private static final String AD_MOB_APP_ID = "ca-app-pub-5451364651863658~6691926353";
     private static final String AD_MOB_AD_UNIT_ID = "ca-app-pub-5451364651863658/6174288359";
 
