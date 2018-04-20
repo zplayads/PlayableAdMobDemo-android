@@ -21,7 +21,45 @@ public class InterstitialActivity extends Activity {
     private static final String AD_MOB_AD_UNIT_ID = "ca-app-pub-5451364651863658/6174288359";
 
     private InterstitialAd mInterstitialAd;
-    private AdListener adListener;
+    private AdListener adListener = new AdListener() {
+        @Override
+        public void onAdClosed() {
+            super.onAdClosed();
+            addLog("onAdClosed");
+        }
+
+        @Override
+        public void onAdOpened() {
+            super.onAdOpened();
+            addLog("onAdOpened");
+        }
+
+        @Override
+        public void onAdLeftApplication() {
+            super.onAdLeftApplication();
+            addLog("onAdLeftApplication");
+        }
+
+        @Override
+        public void onAdLoaded() {
+            super.onAdLoaded();
+            mProgressBar.setVisibility(View.GONE);
+            addLog("onAdLoaded");
+        }
+
+        @Override
+        public void onAdFailedToLoad(int errorCode) {
+            super.onAdFailedToLoad(errorCode);
+            mProgressBar.setVisibility(View.GONE);
+            addLog("onAdFailedToLoad errorCode:"+errorCode);
+        }
+        @Override
+        public void onAdClicked() {
+            super.onAdClicked();
+            addLog("onAdClicked");
+        }
+    };
+
     View mProgressBar;
     TextView mLogView;
 
@@ -31,7 +69,6 @@ public class InterstitialActivity extends Activity {
         setContentView(R.layout.activity_interstitial);
         mProgressBar = findViewById(R.id.loading_bar);
         mLogView = findViewById(R.id.log_text);
-        createAdListener();
         if (mInterstitialAd == null) {
             MobileAds.initialize(this,AD_MOB_APP_ID);
             mInterstitialAd = new InterstitialAd(this);
@@ -59,62 +96,6 @@ public class InterstitialActivity extends Activity {
         }else {
             addLog("ad no loaded");
         }
-    }
-
-    private void createAdListener() {
-        adListener = new AdListener() {
-            @Override
-            public void onAdClosed() {
-                super.onAdClosed();
-                addLog("onAdClosed");
-            }
-
-            @Override
-            public void onAdOpened() {
-                super.onAdOpened();
-                addLog("onAdOpened");
-            }
-
-            @Override
-            public void onAdLeftApplication() {
-                super.onAdLeftApplication();
-                addLog("onAdLeftApplication");
-            }
-
-            @Override
-            public void onAdLoaded() {
-                super.onAdLoaded();
-                mProgressBar.setVisibility(View.GONE);
-                addLog("onAdLoaded");
-            }
-
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                super.onAdFailedToLoad(errorCode);
-                mProgressBar.setVisibility(View.GONE);
-                addLog("onAdFailedToLoad errorCode:"+errorCode);
-            }
-            @Override
-            public void onAdClicked() {
-                super.onAdClicked();
-                addLog("onAdClicked");
-            }
-        };
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
     }
 
     void addLog(String msg) {

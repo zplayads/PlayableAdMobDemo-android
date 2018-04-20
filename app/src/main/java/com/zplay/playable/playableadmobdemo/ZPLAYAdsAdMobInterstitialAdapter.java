@@ -57,9 +57,10 @@ public class ZPLAYAdsAdMobInterstitialAdapter implements CustomEventInterstitial
             mMediationInterstitialListener.onAdOpened();
             pAd.presentPlayableAD(paAdUnitId, new SimplePlayLoadingListener() {
 
+                @Override
                 public void onAdsError(int var1, String var2) {
-                    mMediationInterstitialListener.onAdFailedToLoad( 0);
-                    Log.e(TAG, "onAdsError");
+                    mMediationInterstitialListener.onAdFailedToLoad( var1);
+                    Log.e(TAG, "onAdsError "+var1+"  "+var2);
                 }
 
                 @Override
@@ -85,19 +86,14 @@ public class ZPLAYAdsAdMobInterstitialAdapter implements CustomEventInterstitial
 
     @Override
     public void onDestroy() {
-
     }
 
     @Override
     public void onPause() {
-
     }
-
     @Override
     public void onResume() {
-
     }
-
 
     private void resetIds(@NonNull String parameters) {
         if (parameters == null) {
