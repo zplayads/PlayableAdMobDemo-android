@@ -42,7 +42,7 @@ b. 选择您的应用是否已经上架Googleplay或AppStore，以下以未上�
 ![image](imgs/018-add app2.png)
 
 c. 输入应用名称，选择应用操作系统，点击“ADD”保存添加的应用
-![image](imgs/018-add app2.png)
+![image](019-add app3.png)
 
 #### 2. 添加新广告位
 a. 目录中选择“Apps”，选择您要添加广告位的应用
@@ -90,7 +90,7 @@ f. 输入第三方广告源名称，此处以ZPLAY Ads为例，可根据需求�
 
 ![image](imgs/013-mediation group creat6.png)
 
-g. 对ZPLAY Ads广告源进行配置，在Class Name处输入适配类名称（详情参考第三部分），Parameter中填入ZPLAY Ads平台参数（应用ID和广告位ID），参数间以空格隔开，点击“DONE”完成ZPLAY Ads的配置
+g. 对ZPLAY Ads广告源进行配置，在Class Name处输入适配类名称（详情参考第三部分），Parameter第一个值为ZPLAY Ads平台申请的应用ID，第二个值为ZPLAY Ads平台申请的广告位ID，注意这两个值的顺序不能更改，且之间只有一个空格，点击“DONE”完成ZPLAY Ads的配置
 
 ![image](imgs/014-mediation group creat7.png)
 
