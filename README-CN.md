@@ -32,37 +32,67 @@ dependencies {
 compile 'com.google.android.gms:play-services-ads:11.6.2'
 }
 ```
+
 ## 二 在AdMob平台添加ZPLAY Ads广告源
-### 1: 添加新应用且添加广告位，使其运行ZPLAY Ads广告
-a. 添加应用，如图：
-![img](imgs/image01.png)
-b. 选择应该是否已经上架到Google Play或App Store，根据实际情况选择即可。这里选择“NO”, 后期上线后可再回来绑定
-![img](imgs/image02.png)
-c. 设置应用名以及平台，此处以PlayableAdMobDemo应用及Android平台为例，填好后点击“ADD”继续
-![img](imgs/image03.png)
-d. 创建完成，此时已经拥有应用ID，点击“NEXT: CREATE AD UNIT”创建广告位
-![img](imgs/image04.png)
-e. 创建广告位时，选择广告形式，此处以“激励视频”为例，选择SELECT
-![img](imgs/image05.png)
-f. 根据需求填写广告位信息，如这里只是示例，只填写了广告位名称，其它为默认。点击“CREATE AD UNIT”创建完成
-![img](imgs/image06.png)
-g. 创建完成，记录下新创建的Admob应用ID和广告位ID以备后用。
-![img](imgs/image07.png)
-### 2 添加ZPLAY Ads广告源
-a. 在Mediation目录下点击“CREATE MEDIATION GROUP”
-![img](imgs/image08.png)
-b. 设置广告源信息，此处以Rewarded video为例，Ad format为Rewarded video，Platform设置为Android，点击“CONTINUE”
-![img](imgs/image09.png)
-c. 设置广告源方便管理，这里设置为Playable-Advertising-android（广告源名称可按需求设定，如ZPLAY Ads），点击"ADD AD UNITS"向该源添加广告位
-![img](imgs/image10.png)
-d. 选择步骤2中创建的广告位，点击“DONE”完成添加
-![img](imgs/image11.png)
-c. 添加适配类信息，以便传递ZPLAY Ads应用ID和广告位ID
-![img](imgs/image12.png)
-d. 添加广告源名称，此处以Playable Network为例，可根据需求自定义
-![img](imgs/image13.png)
-e. 添加适配类以及ZPLAY Ads应用ID（如androidDemoApp）和广告位ID（如androidDemoAdUnit），适配类在目录三中介绍。
-![img](imgs/image14.png)
+#### 1. 添加新应用
+a. 选择目录中Apps，点击“ADD APP”按钮
+![img](imgs/018-add app1.png)
+
+b. 选择您的应用是否已经上架Googleplay或AppStore，以下以未上架为例
+![img](imgs/018-add app2.png)
+
+c. 输入应用名称，选择应用操作系统，点击“ADD”保存添加的应用
+![img](imgs/018-add app2.png)
+
+#### 2. 添加新广告位
+a. 目录中选择“Apps”，选择您要添加广告位的应用
+
+![img](imgs/001-choose app.png)
+
+b. 点击“ADD AD UNIT”按钮
+
+![img](imgs/002-add ad unit 1.png)
+
+c. 选择您所需要的广告形式，ZPLAY Ads目前支持Interstitial及Rewarded，此处以Rewarded为例
+
+![img](imgs/003-add ad unit2 RV 1.png)
+
+d. 输入广告位名称及对广告位进行设置，点击“CREAT AD UNIT”保存添加的广告位
+
+![img](imgs/004-add ad unit2 RV2.png)
+
+e. 获取此广告位的app ID及ad unit ID，点击“DONE”完成广告位的创建
+
+![img](imgs/005-add ad unit2 RV3.png)
+
+#### 3. 添加ZPLAY Ads广告源
+a. 目录中选择“Mediation”，选择“CREATE MEDIATION GROUP”
+
+![img](imgs/007-mediation group create.png)
+
+b. 选择您要使用的广告形式及操作系统，ZPLAY Ads目前支持Interstitial及Rewarded，此处以Rewarded为例，点击“CONTINUE”进入下一步
+
+![img](imgs/008-mediation group crate1.png)
+
+c. 输入Mediation名字，通过Location进行地域设置，状态置位Enable时Mediation才可生效，点击“ADD AD UNIT”选择要添加的广告位
+
+![img](imgs/009-mediation group creat2.png)
+
+d. 在广告位选择框中，先后选择所需应用及广告位，点击“DONE”保存所配置的广告位
+
+![img](imgs/011-mediation group creat4.png)
+
+e. 点击“ADD CUSTOM EVENT”添加自定义广告源
+
+![img](imgs/012-mediation group creat5.png)
+
+f. 输入第三方广告源名称，此处以ZPLAY Ads为例，可根据需求进行自定义，根据需要对第三方广告源进行价格设置
+
+![img](imgs/013-mediation group creat6.png)
+
+g. 对ZPLAY Ads广告源进行配置，在Class Name处输入适配类名称（详情参考第三部分），Parameter中填入ZPLAY Ads平台参数（应用ID和广告位ID），参数间以空格隔开，点击“DONE”完成ZPLAY Ads的配置
+
+![img](imgs/014-mediation group creat7.png)
 
 注：您在测试中可使用如下ID进行测试，测试ID不会产生收益，应用上线时请使用您申请的正式id。
 
@@ -71,21 +101,12 @@ e. 添加适配类以及ZPLAY Ads应用ID（如androidDemoApp）和广告位ID�
 |Android |激励视频|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC|
 |Android|插屏|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|19393189-C4EB-3886-60B9-13B39407064E|
 
-f. 配置完成，可看到图示1位置的广告位id已经支持图示2中的两个广告源，点击“SAVE”保存，完成广告源添加
-![img](imgs/image15.png)
-### 3 已有应用，修改现有广告位，使其支持ZPLAY Ads
-a. 注意此处，OldRewardedUnit广告位默认有0个三方广告源
-![img](imgs/image16.png)
-b. 进入ZPLAY Ads广告源
-![img](imgs/image17.png)
-c. 点击“ADD AD UNITS”将广告位添加ZPLAY Ads广告源
-![img](imgs/image18.png)
-d. 选择已有的激励视频广告位，点击“CONTINUE”，进行适配类设置
-![img](imgs/image19.png)
-e. 设置适配类，根据实际情况进行填写，点击“DONE”完成广告源配置
-![img](imgs/image20.png)
-f. 保存
-![img](imgs/image21.png)
-g. 此时，OldRewardedUnit的三方广告源为1，广告源添加完成
-![img](imgs/image22.png)
+h. Ad source列表中可以看到所设置的广告源ZPLAY Ads，点击“SAVE”完成Mediation的配置
+
+![img](imgs/015-mediation group creat8.png)
+
+i. 检查第三方广告源是否添加完成，在Apps列表中找到步骤d中选择的应用及广告位，广告位Mediation groups中active数量增加表示广告源添加成功
+
+![img](imgs/016-mediation group creat9.png)
+
 ## 三 适配类与请求请参考DEMO
