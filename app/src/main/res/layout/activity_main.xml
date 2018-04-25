@@ -2,37 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="10dp">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
         <Button
+            android:id="@+id/btn_RewardedVideoAD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="loadAd"
-            android:textAllCaps="false"
-            android:text="load ad" />
+            android:text="RewardedVideoAD"
+            android:textAllCaps="false"/>
 
         <Button
+            android:id="@+id/btn_InterstitialAD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="displayAd"
-            android:text="present ad"
+            android:text="InterstitialAD"
             android:textAllCaps="false" />
-
-        <ProgressBar
-            android:id="@+id/loading_bar"
-            android:layout_width="40dp"
-            android:visibility="gone"
-            android:layout_height="40dp" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/log_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
 </LinearLayout>
