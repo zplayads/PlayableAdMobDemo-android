@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent intent = new Intent();
         if (v.getId() == R.id.btn_RewardedVideoAD) {
             intent.setClass(MainActivity.this, RewardedVideoActivity.class);
-        }else{
+        } else {
             intent.setClass(MainActivity.this, InterstitialActivity.class);
         }
         startActivity(intent);

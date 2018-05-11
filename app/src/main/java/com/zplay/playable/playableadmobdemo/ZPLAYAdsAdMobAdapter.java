@@ -8,12 +8,12 @@ import android.util.Log;
 import com.google.android.gms.ads.mediation.MediationAdRequest;
 import com.google.android.gms.ads.reward.mediation.MediationRewardedVideoAdAdapter;
 import com.google.android.gms.ads.reward.mediation.MediationRewardedVideoAdListener;
+import com.playableads.PlayLoadingListener;
 import com.playableads.PlayPreloadingListener;
 import com.playableads.PlayableAds;
-import com.playableads.SimplePlayLoadingListener;
 
 /**
- * Description: 不要修改
+ * Description: ZPLAYAdsAdMobAdapter
  * Created by lgd on 2017/12/4.
  */
 
@@ -59,14 +59,7 @@ public class ZPLAYAdsAdMobAdapter implements MediationRewardedVideoAdAdapter {
     public void showVideo() {
         if (pAd.canPresentAd(paAdUnitId)) {
             mRewardedVideoEventForwarder.onAdOpened(ZPLAYAdsAdMobAdapter.this);
-            pAd.presentPlayableAD(paAdUnitId, new SimplePlayLoadingListener() {
-                public void playableAdsIncentive() {
-                    mRewardedVideoEventForwarder.onRewarded(ZPLAYAdsAdMobAdapter.this, null);
-                }
-
-                public void onAdsError(int var1, String var2) {
-                    mRewardedVideoEventForwarder.onAdFailedToLoad(ZPLAYAdsAdMobAdapter.this, 0);
-                }
+            pAd.presentPlayableAD(paAdUnitId, new PlayLoadingListener() {
 
                 @Override
                 public void onVideoStart() {
@@ -74,14 +67,28 @@ public class ZPLAYAdsAdMobAdapter implements MediationRewardedVideoAdAdapter {
                 }
 
                 @Override
-                public void onAdClosed() {
-                    mRewardedVideoEventForwarder.onAdClosed(ZPLAYAdsAdMobAdapter.this);
+                public void onVideoFinished() {
+                    mRewardedVideoEventForwarder.onVideoCompleted(ZPLAYAdsAdMobAdapter.this);
                 }
 
                 @Override
                 public void onLandingPageInstallBtnClicked() {
                     mRewardedVideoEventForwarder.onAdClicked(ZPLAYAdsAdMobAdapter.this);
                 }
+
+                public void playableAdsIncentive() {
+                    mRewardedVideoEventForwarder.onRewarded(ZPLAYAdsAdMobAdapter.this, null);
+                }
+
+                @Override
+                public void onAdClosed() {
+                    mRewardedVideoEventForwarder.onAdClosed(ZPLAYAdsAdMobAdapter.this);
+                }
+
+                public void onAdsError(int var1, String var2) {
+                    mRewardedVideoEventForwarder.onAdFailedToLoad(ZPLAYAdsAdMobAdapter.this, 0);
+                }
+
             });
         }
     }
