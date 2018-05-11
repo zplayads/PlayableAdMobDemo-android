@@ -2,7 +2,6 @@ package com.zplay.playable.playableadmobdemo;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.google.android.gms.ads.AdRequest;
@@ -59,8 +58,8 @@ public class ZPLAYAdsAdMobInterstitialAdapter implements CustomEventInterstitial
 
                 @Override
                 public void onAdsError(int var1, String var2) {
-                    mMediationInterstitialListener.onAdFailedToLoad( var1);
-                    Log.e(TAG, "onAdsError "+var1+"  "+var2);
+                    mMediationInterstitialListener.onAdFailedToLoad(var1);
+                    Log.e(TAG, "onAdsError " + var1 + "  " + var2);
                 }
 
                 @Override
@@ -91,11 +90,12 @@ public class ZPLAYAdsAdMobInterstitialAdapter implements CustomEventInterstitial
     @Override
     public void onPause() {
     }
+
     @Override
     public void onResume() {
     }
 
-    private void resetIds(@NonNull String parameters) {
+    private void resetIds(String parameters) {
         if (parameters == null) {
             Log.e(TAG, "check parameter from AdMob web");
             return;
