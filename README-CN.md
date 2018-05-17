@@ -6,30 +6,30 @@
 在app Module下添加
 ```
 dependencies {
-compile 'com.playableads:playableads:2.0.2'
+    compile 'com.playableads:playableads:2.0.4'
 }
 ```
 ### 2. 添加AdMob广告SDK依赖
 a. 在project构建文件(gradle)中的allprojects.repositories结点添加以下代码
 ```
 maven {
-url "https://maven.google.com"
+    url "https://maven.google.com"
 }
 ```
 使其看起来像：
 ```
 allprojects {
-repositories {     
-maven {
-url "https://maven.google.com"
-}
-}
+    repositories {
+        maven {
+            url "https://maven.google.com"
+        }
+    }
 }
 ```
-b. 在app Module下添加
+b. 在app Module下添加（可选）
 ```
 dependencies {
-compile 'com.google.android.gms:play-services-ads:11.6.2'
+    compile 'com.google.android.gms:play-services-ads:15.0.1'
 }
 ```
 
@@ -42,7 +42,7 @@ b. 选择您的应用是否已经上架Googleplay或AppStore，以下以未上�
 ![image](imgs/018addapp2.png)
 
 c. 输入应用名称，选择应用操作系统，点击“ADD”保存添加的应用
-![image](019addapp3.png)
+![image](imgs/019addapp3.png)
 
 #### 2. 添加新广告位
 a. 目录中选择“Apps”，选择您要添加广告位的应用
@@ -96,10 +96,10 @@ g. 对ZPLAY Ads广告源进行配置，在Class Name处输入适配类名称（�
 
 注：您在测试中可使用如下ID进行测试，测试ID不会产生收益，应用上线时请使用您申请的正式id。
 
-|操作系统|广告形式|  App_ID  |  Ad_Unit_id|
+|广告形式|  App_ID  |  Ad_Unit_id|
 |--------|---|----------|------------|
-|Android |激励视频|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC|
-|Android|插屏|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|19393189-C4EB-3886-60B9-13B39407064E|
+|激励视频|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC|
+|插屏广告|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|19393189-C4EB-3886-60B9-13B39407064E|
 
 h. Ad source列表中可以看到所设置的广告源ZPLAY Ads，点击“SAVE”完成Mediation的配置
 
