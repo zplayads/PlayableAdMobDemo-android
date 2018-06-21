@@ -6,7 +6,7 @@
 在app Module下添加
 ```
 dependencies {
-    compile 'com.playableads:playableads:2.0.5'
+    compile 'com.playableads:playableads:2.0.6'
 }
 ```
 ### 2. 添加AdMob广告SDK依赖
