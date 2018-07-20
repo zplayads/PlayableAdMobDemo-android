@@ -1,12 +1,10 @@
-前提：中国大陆用户请注意，满足手机装有Google Play并且可访问Google官网（翻墙）后才能接入Admob广告，不然会一直提示网络错误。
-
 ## 一 接入ZPLAY Ads SDK和AdMob SDK
 以Android Studio为例，其它平台请查看ZPLAY Ads接入文档及AdMob SDK接入文档，以下简要步骤
 ### 1. 添加ZPLAY Ads SDK依赖：
 在app Module下添加
 ```
 dependencies {
-    compile 'com.playableads:playableads:2.0.6'
+    compile 'com.playableads:playableads:2.0.7'
 }
 ```
 ### 2. 添加AdMob广告SDK依赖
