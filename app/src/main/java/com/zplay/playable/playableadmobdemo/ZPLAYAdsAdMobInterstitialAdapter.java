@@ -9,16 +9,14 @@ import com.google.android.gms.ads.mediation.MediationAdRequest;
 import com.google.android.gms.ads.mediation.customevent.CustomEventInterstitial;
 import com.google.android.gms.ads.mediation.customevent.CustomEventInterstitialListener;
 import com.playableads.PlayPreloadingListener;
-import com.playableads.PlayableAds;
+import com.playableads.PlayableInterstitial;
 import com.playableads.SimplePlayLoadingListener;
 
-
-@SuppressWarnings("unused")
 public class ZPLAYAdsAdMobInterstitialAdapter implements CustomEventInterstitial {
     private static final String TAG = "ZPLAYAdsAdMobAdapter";
     private String paAppId;
     private String paAdUnitId;
-    private PlayableAds pAd;
+    private PlayableInterstitial interstitial;
     private CustomEventInterstitialListener mMediationInterstitialListener;
 
     @Override
@@ -26,11 +24,10 @@ public class ZPLAYAdsAdMobInterstitialAdapter implements CustomEventInterstitial
         try {
             Log.e(TAG, "requestInterstitialAd");
             resetIds(serverParameter);
-            pAd = PlayableAds.init(context, paAppId);
-            pAd.setAutoLoadAd(false);
-            pAd.enableAutoRequestPermissions(true);
+            interstitial = PlayableInterstitial.init(context, paAppId);
+            interstitial.setAutoload(false);
             mMediationInterstitialListener = listener;
-            pAd.requestPlayableAds(paAdUnitId, new PlayPreloadingListener() {
+            interstitial.requestPlayableAds(paAdUnitId, new PlayPreloadingListener() {
                 @Override
                 public void onLoadFinished() {
                     mMediationInterstitialListener.onAdLoaded();
@@ -52,9 +49,9 @@ public class ZPLAYAdsAdMobInterstitialAdapter implements CustomEventInterstitial
 
     @Override
     public void showInterstitial() {
-        if (pAd.canPresentAd(paAdUnitId)) {
+        if (interstitial.canPresentAd(paAdUnitId)) {
             mMediationInterstitialListener.onAdOpened();
-            pAd.presentPlayableAD(paAdUnitId, new SimplePlayLoadingListener() {
+            interstitial.presentPlayableAd(paAdUnitId, new SimplePlayLoadingListener() {
 
                 @Override
                 public void onAdsError(int var1, String var2) {
@@ -76,7 +73,7 @@ public class ZPLAYAdsAdMobInterstitialAdapter implements CustomEventInterstitial
                 @Override
                 public void onLandingPageInstallBtnClicked() {
                     mMediationInterstitialListener.onAdClicked();
-                    Log.e(TAG, "onLandingPageInstallBtnClicked");
+                    Log.e(TAG, "onInstallBtnClicked");
                 }
 
             });
