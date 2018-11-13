@@ -1,14 +1,15 @@
 ## 一 接入ZPLAY Ads SDK和AdMob SDK
 以Android Studio为例，其它平台请查看ZPLAY Ads接入文档及AdMob SDK接入文档，以下简要步骤
 ### 1. 添加ZPLAY Ads SDK依赖：
-在app Module下添加
+在app Module下添加ZPLAYAds依赖
 ```
 dependencies {
-    compile 'com.playableads:playableads:2.2.1'
+    compile 'com.playableads:playableads:2.3.0'
 }
 ```
+
 ### 2. 添加AdMob广告SDK依赖
-a. 在project构建文件(gradle)中的allprojects.repositories结点添加以下代码
+a. 在根目录的build.gradle文件中添加 maven 仓库
 ```
 maven {
     url "https://maven.google.com"
@@ -24,12 +25,13 @@ allprojects {
     }
 }
 ```
-b. 在app Module下添加（可选）
+b. 在app Module下添加AdMob依赖
 ```
 dependencies {
     compile 'com.google.android.gms:play-services-ads:15.0.1'
 }
 ```
+接入AdMob SDK详情参考[官方文档](https://developers.google.com/admob/android/quick-start#import_the_mobile_ads_sdk)
 
 ## 二 在AdMob平台添加ZPLAY Ads广告源
 #### 1. 添加新应用
@@ -55,7 +57,7 @@ c. 选择您所需要的广告形式，ZPLAY Ads目前支持Interstitial及Rewar
 
 ![image](imgs/003addadunit2RV1.png)
 
-d. 输入广告位名称及对广告位进行设置，点击“CREAT AD UNIT”保存添加的广告位
+d. 输入广告位名称及对广告位进行设置，点击“CREATE AD UNIT”保存添加的广告位
 
 ![image](imgs/004addadunit2RV2.png)
 
@@ -88,7 +90,7 @@ f. 输入第三方广告源名称，此处以ZPLAY Ads为例，可根据需求�
 
 ![image](imgs/013mediationgroupcreate6.png)
 
-g. 对ZPLAY Ads广告源进行配置，在Class Name处输入适配类名称（详情参考第三部分），Parameter第一个值为ZPLAY Ads平台申请的应用ID，第二个值为ZPLAY Ads平台申请的广告位ID，注意这两个值的顺序不能更改，且之间只有一个空格，点击“DONE”完成ZPLAY Ads的配置
+g. 对ZPLAY Ads广告源进行配置，在Class Name处输入适配类名称，即将下图中ZPLAYAds替换为适配器类全称（**包名+类名**），如示例中激励视频为```com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter```，插屏广告为```com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobInterstitialAdapter```，Parameter第一个值为ZPLAY Ads平台申请的应用ID，第二个值为ZPLAY Ads平台申请的广告位ID，注意这两个值的顺序不能更改，且之间只有一个空格，点击“DONE”完成ZPLAY Ads的配置
 
 ![image](imgs/014mediationgroupcreate7.png)
 
