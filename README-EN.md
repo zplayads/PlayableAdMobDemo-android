@@ -49,7 +49,7 @@ a. Click "Apps" in the menu bar, and then click "ADD APP" button.
 b. Choose whether your app has published in Google Play or App Store, following takes "unpublished" as an example. 
 ![image](imgs/018addapp2.png)
 
-c. Enter your app information and platform, and click "ADD" to add app.
+c. Enter your app information and choose platform, and click "ADD" to add an app.
 ![image](imgs/019addapp3.png)
 
 #### 2.2 Add New Ad Unit

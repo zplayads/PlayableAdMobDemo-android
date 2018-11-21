@@ -84,7 +84,7 @@ e. 点击“ADD CUSTOM EVENT”添加自定义广告源
 
 ![image](imgs/012mediationgroupcreate5.png)
 
-f. 输入第三方广告源名称，此处以ZPLAY Ads为例，可根据需求进行自定义，根据需要对第三方广告源进行价格设置
+f. 输入第三方广告源名称，此处以ZPLAYAds为例，可根据需求进行自定义，根据需要对第三方广告源进行价格设置
 
 ![image](imgs/013mediationgroupcreate6.png)
 
