@@ -46,7 +46,7 @@ About integrating of AdMob, please refers to [Official Documentation](https://de
 a. Click "Apps" in the menu bar, and then click "ADD APP" button. 
 ![image](imgs/018addapp1.png)
 
-b. Choose whether your app has published in Google Play or App Store, following takes "unpublished" as an example. 
+b. Choose whether your app has published in Google Play or App Store, here takes unpublished as an example. 
 ![image](imgs/018addapp2.png)
 
 c. Enter your app information and choose a platform, and click "ADD" to add an app.
@@ -89,12 +89,12 @@ e. Click "ADD CUSTOM EVENT" to add custom ad sources.
 f. Fill in the label of custom ad resource, using ZPLAYAds as an example, you can customize it and set floor price according to your needs.
 ![image](imgs/013mediationgroupcreate6.png)
 
-g. Configure ZPLAY Ads ad source. Fill in adapter name in "Class Name (as the following image shows)", which means replace ZPLAYAds with adapter name (package name.class name). The Interstitial adapter name for ZPLAY Ads is com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobInterstitialAdapter, and Rewarded Video adapter name for ZPLAY Ads is com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter. The first value in "Parameter" should be the App ID you applied on ZPLAY Ads, and the second value in "Parameter" should be the Ad Unit ID you applied on ZPLAY Ads. Please note that the order of these two values cannot be changed, and there is only one space between these two values. Click "DONE" to complete configuration.
+g. Configure ZPLAY Ads ad source. Fill in adapter name in "Class Name" (as the following image shows), which means replace ZPLAYAds with adapter name (package name.class name). The Interstitial adapter name for ZPLAY Ads is com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobInterstitialAdapter, and Rewarded Video adapter name for ZPLAY Ads is com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter. The first value in "Parameter" should be the App ID you applied on ZPLAY Ads, and the second value in "Parameter" should be the Ad Unit ID you applied on ZPLAY Ads. Please note that the order of these two values cannot be changed, and there is only one space between these two values. Click "DONE" to complete configuration.
 
 ![image](imgs/014mediationgroupcreate7.png)
 
 
-Note: You are available to use the following ID when testing(no charge). Please switch to the ID you applied in production mode.
+Note: You are available to use the following ID when testing (no charge). Please switch to the ID you applied in production mode.
 
 |Ad Format|App_ID|Ad_Unit_id|
 |---|---|---|
