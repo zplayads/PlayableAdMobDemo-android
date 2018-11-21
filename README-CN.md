@@ -68,7 +68,7 @@ a. 目录中选择“Mediation”，选择“CREATE MEDIATION GROUP”
 
 ![image](imgs/007mediationgroupcreate.png)
 
-b. 选择您要使用的广告形式及操作系统，ZPLAY Ads目前支持Interstitial及Rewarded，此处以Rewarded为例，点击“CONTINUE”进入下一步
+b. 选择您要使用的广告形式及操作系统，ZPLAY Ads目前支持Interstitial及Rewarded video，此处以Rewarded video为例，点击“CONTINUE”进入下一步
 
 ![image](imgs/008mediationgroupcrate1.png)
 
@@ -88,7 +88,7 @@ f. 输入第三方广告源名称，此处以ZPLAY Ads为例，可根据需求�
 
 ![image](imgs/013mediationgroupcreate6.png)
 
-g. 对ZPLAY Ads广告源进行配置，在Class Name处输入适配类名称（详情参考第三部分），Parameter第一个值为ZPLAY Ads平台申请的应用ID，第二个值为ZPLAY Ads平台申请的广告位ID，注意这两个值的顺序不能更改，且之间只有一个空格，点击“DONE”完成ZPLAY Ads的配置
+g. 对ZPLAY Ads广告源进行配置，在Class Name处（如下图所示）输入适配类名称，即将下图中ZPLAYAds替换为适配器类全称（包名.类名）。ZPLAY Ads插屏适配器为com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobInterstitialAdapter，ZPLAY Ads激励视频适配器为com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter。Parameter中第一个值需填写ZPLAY Ads平台申请的应用ID，第二个值须填写ZPLAY Ads平台申请的广告位ID，注意这两个值的顺序不能更改，且两参数间只有一个空格，点击“DONE”完成ZPLAY Ads的配置
 
 ![image](imgs/014mediationgroupcreate7.png)
 

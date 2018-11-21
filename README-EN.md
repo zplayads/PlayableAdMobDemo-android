@@ -1,5 +1,5 @@
 ## 1 Integrate ZPLAY Ads SDK and AdMob SDK
-Take Android Studio as an example, following are major steps. If you use other platform, please check ZPLAY Ads SDK Integration Guide and AdMob SDK Integration Guide to see details. 
+Using Android Studio as an example, here is some major steps. If you use other IDE, please refer to ZPLAY Ads SDK Integration Guide and AdMob SDK Integration Guide.
 
 ### 1.1 Add ZPLAY Ads SDK Dependence
 
@@ -43,10 +43,10 @@ About integrating of AdMob, please refers to [Official Documentation](https://de
 
 #### 2.1 Add New App
 
-a. Click "Apps" in the index, and then click "ADD APP" button. 
+a. Click "Apps" in the menu bar, and then click "ADD APP" button. 
 ![image](imgs/018addapp1.png)
 
-b. Choose whether your app has launched in Google Play or App Store, following takes "unlaunched" as an example. 
+b. Choose whether your app has published in Google Play or App Store, following takes "unpublished" as an example. 
 ![image](imgs/018addapp2.png)
 
 c. Enter your app information and platform, and click "ADD" to add app.
@@ -54,42 +54,42 @@ c. Enter your app information and platform, and click "ADD" to add app.
 
 #### 2.2 Add New Ad Unit
 
-a. Click "Apps" in the index, and choose the app you are going to add ad unit. 
+a. Click "Apps" in the menu bar, and choose the App which you want to add an Ad unit. 
 ![image](imgs/001chooseapp.png)
 
 b. Click "ADD AD UNIT" button. 
 ![image](imgs/002addadunit1.png)
 
-c. Choose an ad format. ZPLAY Ads supports Interstitial and Rewarded now. Here take Rewarded as an example. 
+c. Choose an ad format. ZPLAY Ads supports Interstitial and Rewarded now. Using Rewarded as an example. 
 ![image](imgs/003addadunit2RV1.png)
 
-d. Enter ad unit name and set your ad unit, then click "CREATE AD UNIT" to add ad unit. 
+d. Fill in the name of Ad unit, you can also make some advanced setting for this Ad unit, then click "CREATE AD UNIT" to add ad unit. 
 ![image](imgs/004addadunit2RV2.png)
 
-e. Acquire app ID and ad unit ID of this ad unit. Click "DONE" to accomplish ad unit creation.
+e. Get app ID and ad unit ID of this ad unit. Click "DONE" to accomplish ad unit creation.
 ![image](imgs/005addadunit2RV3.png)
 
 #### 2.3 Add ZPLAY Ads as a New Network on AdMob
  
- a. Choose "Mediation" in the index, and click "CREATE MEDIATION GROUP" button.
+a. Choose "Mediation" in the menu bar, and click "CREATE MEDIATION GROUP" button.
 ![image](imgs/007mediationgroupcreate.png)
 
- b. Choose ad format and platform. ZPLAY Ads supports Interstitial and Rewarded now. Here take Rewarded as an example. Click "CONTINUE" button to go on. 
+b. Choose ad format and platform. ZPLAY Ads supports Interstitial and Rewarded video now. Here take Rewarded video as an example. Click "CONTINUE" button to go on. 
 ![image](imgs/008mediationgroupcrate1.png)
 
-c. Enter name of Mediation and set target locations through Location function. The Mediation will be enabled only when the Status controller has switched to "Enable". Click "ADD AD UNITS" to choose ad unit. 
+c. Fill in the name of Mediation and select locations to target. Mediation is only available when the status is Enable. Click "ADD AD UNITS" to choose ad unit. 
 ![image](imgs/009mediationgroupcreat2.png)
 
-d. Choose app and ad unit in selection box, and click "DONE" to save the ad unit you configured.
+d. Choose app and ad unit you want to configure in selection box, and click "DONE" to complete configuration.
 ![image](imgs/011mediationgroupcreate4.png)
 
 e. Click "ADD CUSTOM EVENT" to add custom ad sources.
 ![image](imgs/012mediationgroupcreate5.png)
 
-f. Enter label of third party ad source, you can customize it according to your requirements. Here takes ZPLAY Ads as an example. Then you can set eCPM according to your requirements. 
+f. Fill in the label of custom ad recource, using ZPLAYAds as an example, you can customize it and set floor price according to your needs.
 ![image](imgs/013mediationgroupcreate6.png)
 
-g. Configure ZPLAY Ads ad source. Fill in adapter name in Class Name, which means replace ZPLAYAds (as following image shows) with full name of adapter name(**bundle name+class name**) . As for the example, the Rewarded's adapter name is ```com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter```, and the Interstitial's adapter name is ```com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobInterstitialAdapter```. Parameter contains two values, the first value is App ID which applied in ZPLAY Ads, and the second value is Ad Unit ID which applied in ZPLAY Ads. Please note that the sequence of two values should not be changed, and there is only one blank between two values. Click "DONE" to accomplish configuration. 
+g. Configure ZPLAY Ads ad source. Fill in adapter name in "Class Name (as the following image shows)", which means replace ZPLAYAds with adapter name (package name.class name). The Interstitial adapter name for ZPLAY Ads is com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobInterstitialAdapter, and Rewarded Video adapter name for ZPLAY Ads is com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter. The first value in "Parameter" should be the App ID you applied on ZPLAY Ads, and the second value in "Parameter" should be the Ad Unit ID you applied on ZPLAY Ads. Please note that the order of these two values cannot be changed, and there is only one space between these two values. Click "DONE" to complete configuration.
 
 ![image](imgs/014mediationgroupcreate7.png)
 
@@ -101,10 +101,10 @@ Note: You are available to use the following ID when testing(not charge). Please
 |Rewarded|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC|
 |Interstitial|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|19393189-C4EB-3886-60B9-13B39407064E|
 
-h. You can see ZPLAY Ads in Ad sources list. Click "SAVE" to accomplish configuration of Mediation. 
+h. You can see ZPLAY Ads in Ad sources list. Click "SAVE" to complete ZPLAYAds configuration.
 ![image](imgs/015mediationgroupcreate8.png)
 
-i. Check whether third party ad source has been added successfully. Find app and ad unit choosed in step d in app list. In the Mediation groups column, if the number of active increased, then the ad source has been added successfully.
+i. Check whether third party ad source has been added successfully. In the Apps list, find the application and ad unit selected in step d. The active number in the "mediation groups" increased, indicating that the ad source is successfully configured.
 ![image](imgs/016mediationgroupcreate9.png)
 
 ## 3 About Adapter and Request, please refer to the DEMO. 
