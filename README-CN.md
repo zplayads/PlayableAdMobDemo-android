@@ -8,7 +8,7 @@
         - [2.3 添加ZPLAY Ads广告源](#23-%E6%B7%BB%E5%8A%A0zplay-ads%E5%B9%BF%E5%91%8A%E6%BA%90)
 
 ## 1 接入ZPLAY Ads SDK和AdMob SDK
-以Android Studio为例，其它平台请查看ZPLAY Ads接入文档及[AdMob SDK接入文档](https://developers.google.com/admob/android/quick-start)，以下简要步骤
+以Android Studio为例，接入AdMob请查看[AdMob SDK接入文档](https://developers.google.com/admob/android/quick-start)，以下简要步骤
 ### 1.1 添加ZPLAY Ads SDK依赖：
 在app Module下添加
 ```
@@ -49,7 +49,7 @@ dependencies {
 
 > 关于适配类和请求的详细内容，请参考DEMO中的代码。
 
-## 2 在AdMob平台添加ZPLAY Ads广告源
+## 2 在[AdMob平台](https://apps.admob.com/v2/home)添加ZPLAY Ads广告源
 #### 2.1 添加新应用
 a. 选择目录中Apps，点击“ADD APP”按钮
 ![image](imgs/018addapp1.png)
@@ -62,7 +62,7 @@ c. 输入应用名称，选择应用操作系统，点击“ADD”保存添加�
 
 #### 2.2 添加新广告位
 a. 添加应用后，点击“NEXT: CREATE AD UNIT”按钮创建广告位。
-![image](imgs/001chooseapp.png)
+![image](imgs/addunit.jpg)
 
 b. 选择您所需要的广告形式，ZPLAY Ads目前支持Interstitial及Rewarded，此处以Rewarded为例
 ![image](imgs/003addadunit2RV1.png)
@@ -76,7 +76,7 @@ d. 获取此广告位的app ID及ad unit ID，点击“DONE”完成广告位的
 ![image](imgs/005addadunit2RV3.png)
 
 #### 2.3 添加ZPLAY Ads广告源
-a. 目录中选择“Mediation”，选择“CREATE MEDIATION GROUP”
+a. 目录中选择“[Mediation](https://apps.admob.com/v2/mediation/groups/list)”，选择“[CREATE MEDIATION GROUP](https://apps.admob.com/v2/mediation/groups/create)”
 
 ![image](imgs/007mediationgroupcreate.png)
 
@@ -100,7 +100,7 @@ f. 输入第三方广告源名称，此处以ZPLAYAds为例，可根据需求进
 
 ![image](imgs/013mediationgroupcreate6.png)
 
-g. 对ZPLAY Ads广告源进行配置。在Class Name处（如下图所示，图中的class name仅为示例，请填写下述适配类名称）ZPLAY Ads插屏适配器为com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobInterstitialAdapter，ZPLAY Ads激励视频适配器为com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter。Parameter中第一个值需填写ZPLAY Ads平台申请的应用ID，第二个值须填写ZPLAY Ads平台申请的广告位ID，注意这两个值的顺序不能更改，且两参数间只有一个空格，点击“DONE”完成ZPLAY Ads的配置
+g. 对ZPLAY Ads广告源进行配置。在Class Name处（如下图所示，图中的class name仅为示例，请填写下述适配类名称）ZPLAY Ads插屏适配器为com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobInterstitialAdapter，ZPLAY Ads激励视频适配器为com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter。Parameter中第一个值需填写ZPLAY Ads平台申请的[应用ID](https://sellers.zplayads.com/#/app/appList/)，第二个值须填写ZPLAY Ads平台申请的[广告位ID](https://sellers.zplayads.com/#/ad/placeList/)，注意这两个值的顺序不能更改，且两参数间只有一个空格，点击“DONE”完成ZPLAY Ads的配置
 
 ![image](imgs/014mediationgroupcreate7.png)
 
@@ -115,6 +115,6 @@ h. Ad source列表中可以看到所设置的广告源ZPLAY Ads，点击“SAVE�
 
 ![image](imgs/015mediationgroupcreate8.png)
 
-i. 检查第三方广告源是否添加完成，在Apps列表中找到步骤d中选择的应用及广告位，广告位Mediation groups中active数量增加表示广告源添加成功
+i. 检查第三方广告源是否添加完成，在[Apps列表](https://apps.admob.com/v2/apps/list)中找到步骤d中选择的应用及广告位，广告位Mediation groups中active数量增加表示广告源添加成功
 
 ![image](imgs/016mediationgroupcreate9.png)
