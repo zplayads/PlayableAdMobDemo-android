@@ -1,11 +1,11 @@
 - [1 Integrate ZPLAY Ads SDK and AdMob SDK](#1-integrate-zplay-ads-sdk-and-admob-sdk)
     - [1.1 Add ZPLAY Ads SDK Dependence](#11-add-zplay-ads-sdk-dependence)
     - [1.2 Add AdMob Ads SDK Dependence](#12-add-admob-ads-sdk-dependence)
-    - [1.3 Import ZPLAY Ads Adapter into project 将可玩Adapter导入到工程中](#13-import-zplay-ads-adapter-into-project-%E5%B0%86%E5%8F%AF%E7%8E%A9adapter%E5%AF%BC%E5%85%A5%E5%88%B0%E5%B7%A5%E7%A8%8B%E4%B8%AD)
+    - [1.3 Import ZPLAY Ads Adapter into project](#13-import-zplay-ads-adapter-into-project)
 - [2 Add ZPLAY Ads as a New Network on AdMob](#2-add-zplay-ads-as-a-new-network-on-admob)
-        - [2.1 Add New App](#21-add-new-app)
-        - [2.2 Add New Ad Unit](#22-add-new-ad-unit)
-        - [2.3 Add ZPLAY Ads as a New Network on AdMob](#23-add-zplay-ads-as-a-new-network-on-admob)
+    - [2.1 Add New App](#21-add-new-app)
+    - [2.2 Add New Ad Unit](#22-add-new-ad-unit)
+    - [2.3 Add ZPLAY Ads as a New Network on AdMob](#23-add-zplay-ads-as-a-new-network-on-admob)
 
 ## 1 Integrate ZPLAY Ads SDK and AdMob SDK
 Using Android Studio as an example, here are some major steps. Please refer to [AdMob SDK Integration Guide](https://developers.google.com/admob/android/quick-start) when integrate AdMob.
@@ -48,13 +48,11 @@ dependencies {
 
 About integrating of AdMob, please refers to [Official Documentation](https://developers.google.com/admob/android/quick-start#import_the_mobile_ads_sdk)
 
-### 1.3 Import ZPLAY Ads Adapter into project 将可玩Adapter导入到工程中
+### 1.3 Import ZPLAY Ads Adapter into project 
 
 Rewarded Video Adapter：[ZPLAYAdsAdMobAdapter.java](./app/src/main/java/com/zplay/playable/playableadmobdemo/ZPLAYAdsAdMobAdapter.java)
 
 Interstitial Adapter：[ZPLAYAdsAdMobInterstitialAdapter.java](./app/src/main/java/com/zplay/playable/playableadmobdemo/ZPLAYAdsAdMobInterstitialAdapter.java)
-
-Please ensure that no errors occur after importing the relevant class, and record class name. For example, the class name of rewarded video is `com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter` . When configure ZPLAYAds in Admob, this class name is required.
 
 > If you want to know more about Adapter and Request, please refer to the code sample in DEMO.
 
@@ -104,10 +102,10 @@ e. Click "ADD CUSTOM EVENT" to add custom ad sources.
 f. Fill in the label of custom ad resource, using ZPLAYAds as an example, you can customize it and set floor price according to your needs. 
 ![img](imgs/013mediationgroupcreate6.png)
 
-g. Configure ZPLAY Ads ad source. Fill in adapter name in "Class Name" (as the following image shows, the class name in the picture is just a sample, please use the following adapter name), the Interstitial adapter name is `com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobInterstitialAdapter`, and Rewarded Video adapter name is `com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter`. There are should be two values separated by blank in "Parameter", the first one is the [App ID](https://sellers.zplayads.com/#/app/appList/) and the second one is the [Ad Unit ID](https://sellers.zplayads.com/#/ad/placeList/), which you applied on ZPLAY Ads. Please note that the order of these two values cannot be changed. Click "DONE" to complete configuration.
+g. Configure ZPLAY Ads ad source. Fill in full adapter class name in "Class Name" (as the following image shows, the class name in the picture is just a sample, please use the following adapter name), the Interstitial adapter name in demo is `com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobInterstitialAdapter`, and Rewarded Video adapter name in demo is `com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter`. There are should be two values separated by blank in "Parameter", the first one is the [App ID](https://sellers.zplayads.com/#/app/appList/) and the second one is the [Ad Unit ID](https://sellers.zplayads.com/#/ad/placeList/), which you applied on ZPLAY Ads. Please note that the order of these two values cannot be changed. Click "DONE" to complete configuration.
 ![img](imgs/014mediationgroupcreate7.png)
 
-Note: You are available to use the following ID when testing your App (no charge). Please replace them with the ID you applied in ZPLAY Ads when you publish your App.
+Note: You are available to use the following ID when testing your App (no charge). Please replace them with the ID you applied in [ZPLAY Ads](https://sellers.zplayads.com/) when you publish your App.
 
 |Ad Format|App_ID|Ad_Unit_id|
 |---|---|---|

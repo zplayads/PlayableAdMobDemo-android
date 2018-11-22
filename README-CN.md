@@ -3,9 +3,9 @@
     - [1.2 添加AdMob广告SDK依赖](#12-%E6%B7%BB%E5%8A%A0admob%E5%B9%BF%E5%91%8Asdk%E4%BE%9D%E8%B5%96)
     - [1.3 将可玩Adapter导入到工程中](#13-%E5%B0%86%E5%8F%AF%E7%8E%A9adapter%E5%AF%BC%E5%85%A5%E5%88%B0%E5%B7%A5%E7%A8%8B%E4%B8%AD)
 - [2 在AdMob平台添加ZPLAY Ads广告源](#2-%E5%9C%A8admob%E5%B9%B3%E5%8F%B0%E6%B7%BB%E5%8A%A0zplay-ads%E5%B9%BF%E5%91%8A%E6%BA%90)
-        - [2.1 添加新应用](#21-%E6%B7%BB%E5%8A%A0%E6%96%B0%E5%BA%94%E7%94%A8)
-        - [2.2 添加新广告位](#22-%E6%B7%BB%E5%8A%A0%E6%96%B0%E5%B9%BF%E5%91%8A%E4%BD%8D)
-        - [2.3 添加ZPLAY Ads广告源](#23-%E6%B7%BB%E5%8A%A0zplay-ads%E5%B9%BF%E5%91%8A%E6%BA%90)
+    - [2.1 添加新应用](#21-%E6%B7%BB%E5%8A%A0%E6%96%B0%E5%BA%94%E7%94%A8)
+    - [2.2 添加新广告位](#22-%E6%B7%BB%E5%8A%A0%E6%96%B0%E5%B9%BF%E5%91%8A%E4%BD%8D)
+    - [2.3 添加ZPLAY Ads广告源](#23-%E6%B7%BB%E5%8A%A0zplay-ads%E5%B9%BF%E5%91%8A%E6%BA%90)
 
 ## 1 接入ZPLAY Ads SDK和AdMob SDK
 以Android Studio为例，接入AdMob请查看[AdMob SDK接入文档](https://developers.google.com/admob/android/quick-start)，以下简要步骤
@@ -43,9 +43,7 @@ dependencies {
 ### 1.3 将可玩Adapter导入到工程中
 激励视频Adapter：[ZPLAYAdsAdMobAdapter.java](./app/src/main/java/com/zplay/playable/playableadmobdemo/ZPLAYAdsAdMobAdapter.java)
 
-插屏广告Adapter：[ZPLAYAdsAdMobInterstitialAdapter.java](./app/src/main/java/com/zplay/playable/playableadmobdemo/ZPLAYAdsAdMobInterstitialAdapter.java)
-
-确保导入相关的类之后不出现错误，记录该文件类名，例如激励视频在示例中的类名为：com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter，在Admob平台配置ZPLAYAds信息时需要使用到该类名。
+插屏Adapter：[ZPLAYAdsAdMobInterstitialAdapter.java](./app/src/main/java/com/zplay/playable/playableadmobdemo/ZPLAYAdsAdMobInterstitialAdapter.java)
 
 > 关于适配类和请求的详细内容，请参考DEMO中的代码。
 
@@ -100,7 +98,7 @@ f. 输入第三方广告源名称，此处以ZPLAYAds为例，可根据需求进
 
 ![image](imgs/013mediationgroupcreate6.png)
 
-g. 对ZPLAY Ads广告源进行配置。在Class Name处（如下图所示，图中的class name仅为示例，请填写下述适配类名称）ZPLAY Ads插屏适配器为com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobInterstitialAdapter，ZPLAY Ads激励视频适配器为com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter。Parameter中第一个值需填写ZPLAY Ads平台申请的[应用ID](https://sellers.zplayads.com/#/app/appList/)，第二个值须填写ZPLAY Ads平台申请的[广告位ID](https://sellers.zplayads.com/#/ad/placeList/)，注意这两个值的顺序不能更改，且两参数间只有一个空格，点击“DONE”完成ZPLAY Ads的配置
+g. 对ZPLAY Ads广告源进行配置。在Class Name中填写完整的适配器类名，以demo中适配器类名为例，插屏为`com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobInterstitialAdapter`，激励视频为`com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter`。Parameter中需填写您在ZPLAY Ads申请的[应用ID](https://sellers.zplayads.com/#/app/appList/)和[广告位ID](https://sellers.zplayads.com/#/ad/placeList/)两个参数，通过空格区分且顺序不可更改，点击“DONE”完成ZPLAY Ads的配置
 
 ![image](imgs/014mediationgroupcreate7.png)
 
