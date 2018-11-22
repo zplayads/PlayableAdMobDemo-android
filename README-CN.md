@@ -98,7 +98,7 @@ f. 输入第三方广告源名称，此处以ZPLAYAds为例，可根据需求进
 
 ![image](imgs/013mediationgroupcreate6.png)
 
-g. 对ZPLAY Ads广告源进行配置。在Class Name中填写完整的适配器类名（类名结构为包名.类名），以demo中适配器类名为例，插屏为`com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobInterstitialAdapter`，激励视频为`com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter`。Parameter中需填写您在ZPLAY Ads申请的[应用ID](https://sellers.zplayads.com/#/app/appList/)和[广告位ID](https://sellers.zplayads.com/#/ad/placeList/)两个参数，通过空格区分且顺序不可更改，点击“DONE”完成ZPLAY Ads的配置
+g. 对ZPLAY Ads广告源进行配置。在Class Name中填写完整的适配器类名，以demo中适配器类名为例，插屏为`com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobInterstitialAdapter`，激励视频为`com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter`。Parameter中需填写您在ZPLAY Ads申请的[应用ID](https://sellers.zplayads.com/#/app/appList/)和[广告位ID](https://sellers.zplayads.com/#/ad/placeList/)两个参数，通过空格区分且顺序不可更改，点击“DONE”完成ZPLAY Ads的配置
 
 ![image](imgs/014mediationgroupcreate7.png)
 
