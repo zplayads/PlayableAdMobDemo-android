@@ -15,15 +15,13 @@ import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 
-public class RewardedVideoActivity extends Activity  implements RewardedVideoAdListener {
+public class RewardedVideoActivity extends Activity implements RewardedVideoAdListener {
     private static final String TAG = "MainActivity";
     private static final String AD_MOB_APP_ID = "ca-app-pub-5451364651863658~6691926353";
     private static final String AD_MOB_AD_UNIT_ID = "ca-app-pub-5451364651863658/6193232902";
-
-    private RewardedVideoAd mRewardedVideoAd;
-
     View mProgressBar;
     TextView mLogView;
+    private RewardedVideoAd mRewardedVideoAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +75,11 @@ public class RewardedVideoActivity extends Activity  implements RewardedVideoAdL
     public void onRewardedVideoAdFailedToLoad(int errorCode) {
         mProgressBar.setVisibility(View.GONE);
         addLog("onRewardedVideoAdFailedToLoad error code: " + errorCode);
+    }
+
+    @Override
+    public void onRewardedVideoCompleted() {
+        addLog("onRewardedVideoCompleted");
     }
 
     @Override
