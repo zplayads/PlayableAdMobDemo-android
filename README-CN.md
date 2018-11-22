@@ -45,7 +45,7 @@ dependencies {
 
 插屏Adapter：[ZPLAYAdsAdMobInterstitialAdapter.java](./app/src/main/java/com/zplay/playable/playableadmobdemo/ZPLAYAdsAdMobInterstitialAdapter.java)
 
-> 关于适配类和请求的详细内容，请参考DEMO中的代码。
+> 关于适配类和请求的详细内容，请参考[DEMO](https://github.com/zplayads/PlayableAdMobDemo-android/tree/master/app/src/main/java/com/zplay/playable/playableadmobdemo)中的代码。
 
 ## 2 在[AdMob平台](https://apps.admob.com/v2/home)添加ZPLAY Ads广告源
 #### 2.1 添加新应用
