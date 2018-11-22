@@ -54,7 +54,7 @@ Rewarded Video Adapter：[ZPLAYAdsAdMobAdapter.java](./app/src/main/java/com/zpl
 
 Interstitial Adapter：[ZPLAYAdsAdMobInterstitialAdapter.java](./app/src/main/java/com/zplay/playable/playableadmobdemo/ZPLAYAdsAdMobInterstitialAdapter.java)
 
-> If you want to know more about Adapter and Request, please refer to the code sample in DEMO.
+> If you want to know more about Adapter and Request, please refer to the code sample in [DEMO](https://github.com/zplayads/PlayableAdMobDemo-android/tree/master/app/src/main/java/com/zplay/playable/playableadmobdemo).
 
 ## 2 Add ZPLAY Ads as a New Network on [AdMob](https://apps.admob.com/v2/home)
 
