@@ -86,7 +86,7 @@ d. Get app ID and ad unit ID of this ad unit. Click "DONE" to accomplish ad unit
 ![image](imgs/005addadunit2RV3.png)
 
 #### 2.3 Add ZPLAY Ads as a New Network on AdMob
-a. Choose "[Mediation](https://apps.admob.com/v2/mediation/groups/list)" in the menu bar, and click "[CREATE MEDIATION GROUP](https://apps.admob.com/v2/mediation/groups/create)" button.
+a. Choose "[Mediation](https://apps.admob.com/v2/mediation/groups/list)" in the menu bar, and click "CREATE MEDIATION GROUP" button.
 ![img](imgs/007mediationgroupcreate.png)
 
 b. Choose ad format and platform. ZPLAY Ads supports Interstitial and Rewarded video now. Here take Rewarded video as an example. Click "CONTINUE" button to go on.

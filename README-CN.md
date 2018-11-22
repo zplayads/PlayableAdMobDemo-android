@@ -54,14 +54,14 @@ dependencies {
 a. 选择目录中Apps，点击“ADD APP”按钮
 ![image](imgs/018addapp1.png)
 
-b. 选择您的应用是否已经上架Googleplay或AppStore，如果已上架，选择“是”，如果未上架，选择“否”，以下以未上架为例
+b. 选择您的应用是否已经上架Googleplay或AppStore，如果已上架，选择“YES”，如果未上架，选择“NO”，以下以未上架为例
 ![image](imgs/018addapp2.png)
 
 c. 输入应用名称，选择应用操作系统，点击“ADD”保存添加的应用
 ![image](imgs/019addapp3.png)
 
 #### 2.2 添加新广告位
-a. 添加应用后，点击“NEXT: CREATE AD UNIT”按钮创建广告位。
+a. 添加应用后，点击“NEXT: CREATE AD UNIT”按钮可为此应用添加广告位
 ![image](imgs/addunit.jpg)
 
 b. 选择您所需要的广告形式，ZPLAY Ads目前支持Interstitial及Rewarded，此处以Rewarded为例
@@ -76,7 +76,7 @@ d. 获取此广告位的app ID及ad unit ID，点击“DONE”完成广告位的
 ![image](imgs/005addadunit2RV3.png)
 
 #### 2.3 添加ZPLAY Ads广告源
-a. 目录中选择“[Mediation](https://apps.admob.com/v2/mediation/groups/list)”，选择“[CREATE MEDIATION GROUP](https://apps.admob.com/v2/mediation/groups/create)”
+a. 目录中选择“[Mediation](https://apps.admob.com/v2/mediation/groups/list)”，选择“CREATE MEDIATION GROUP”
 
 ![image](imgs/007mediationgroupcreate.png)
 
@@ -84,7 +84,7 @@ b. 选择您要使用的广告形式及操作系统，ZPLAY Ads目前支持Inter
 
 ![image](imgs/008mediationgroupcreate1.png)
 
-c. 输入Mediation名字，通过Location进行地域设置，状态置位Enable时Mediation才可生效，请保证状态选择了Enable。点击“ADD AD UNIT”选择要添加的广告位
+c. 输入Mediation名字，通过Location进行地域设置，状态置位Enable时Mediation才可生效，请确保状态为Enable。点击“ADD AD UNIT”选择要添加的广告位
 
 ![image](imgs/009mediationgroupcreat2.png)
 
@@ -104,7 +104,7 @@ g. 对ZPLAY Ads广告源进行配置。在Class Name处（如下图所示，图�
 
 ![image](imgs/014mediationgroupcreate7.png)
 
-注：您在测试中可使用如下ID进行测试，测试ID不会产生收益，应用上线时请使用您申请的正式id。
+注：您在测试中可使用如下ID进行测试，测试ID不会产生收益，应用上线时请使用您在[ZPLAY Ads](https://sellers.zplayads.com)申请的正式ID。
 
 | 广告形式 | App_ID                               | Ad_Unit_id                           |
 | -------- | ------------------------------------ | ------------------------------------ |
