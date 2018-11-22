@@ -1,7 +1,7 @@
 - [1 Integrate ZPLAY Ads SDK and AdMob SDK](#1-integrate-zplay-ads-sdk-and-admob-sdk)
     - [1.1 Add ZPLAY Ads SDK Dependence](#11-add-zplay-ads-sdk-dependence)
     - [1.2 Add AdMob Ads SDK Dependence](#12-add-admob-ads-sdk-dependence)
-    - [1.3 Import ZPLAY Ads Adapter into project 将可玩Adapter导入到工程中](#13-import-zplay-ads-adapter-into-project-%E5%B0%86%E5%8F%AF%E7%8E%A9adapter%E5%AF%BC%E5%85%A5%E5%88%B0%E5%B7%A5%E7%A8%8B%E4%B8%AD)
+    - [1.3 Import ZPLAY Ads Adapter into project](#13-import-zplay-ads-adapter-into-project)
 - [2 Add ZPLAY Ads as a New Network on AdMob](#2-add-zplay-ads-as-a-new-network-on-admob)
     - [2.1 Add New App](#21-add-new-app)
     - [2.2 Add New Ad Unit](#22-add-new-ad-unit)
@@ -48,7 +48,7 @@ dependencies {
 
 About integrating of AdMob, please refers to [Official Documentation](https://developers.google.com/admob/android/quick-start#import_the_mobile_ads_sdk)
 
-### 1.3 Import ZPLAY Ads Adapter into project 将可玩Adapter导入到工程中
+### 1.3 Import ZPLAY Ads Adapter into project 
 
 Rewarded Video Adapter：[ZPLAYAdsAdMobAdapter.java](./app/src/main/java/com/zplay/playable/playableadmobdemo/ZPLAYAdsAdMobAdapter.java)
 
