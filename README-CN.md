@@ -10,7 +10,7 @@
 ## 1 接入ZPLAY Ads SDK和AdMob SDK
 以Android Studio为例，接入AdMob请查看[AdMob SDK接入文档](https://developers.google.com/admob/android/quick-start)，以下简要步骤
 ### 1.1 添加ZPLAY Ads SDK依赖：
-在app Module下添加
+在app Module的build.gradle文件中添加
 ```
 dependencies {
     compile 'com.playableads:playableads:2.2.1'
@@ -33,7 +33,7 @@ allprojects {
     }
 }
 ```
-b. 在app Module下添加（可选）
+b. 在app Module的build.gradle文件中添加（可选）
 ```
 dependencies {
     compile 'com.google.android.gms:play-services-ads:15.0.1'
@@ -52,7 +52,7 @@ dependencies {
 a. 选择目录中Apps，点击“ADD APP”按钮
 ![image](imgs/018addapp1.png)
 
-b. 选择您的应用是否已经上架Googleplay或AppStore，如果已上架，选择“YES”，如果未上架，选择“NO”，以下以未上架为例
+b. 选择您的应用是否已经上架Google Play或App Store，如果已上架，选择“YES”，如果未上架，选择“NO”，以下以未上架为例
 ![image](imgs/018addapp2.png)
 
 c. 输入应用名称，选择应用操作系统，点击“ADD”保存添加的应用
@@ -60,7 +60,7 @@ c. 输入应用名称，选择应用操作系统，点击“ADD”保存添加�
 
 #### 2.2 添加新广告位
 a. 添加应用后，点击“NEXT: CREATE AD UNIT”按钮可为此应用添加广告位
-![image](imgs/addunit.jpg)
+![image](imgs/addunit.png)
 
 b. 选择您所需要的广告形式，ZPLAY Ads目前支持Interstitial及Rewarded，此处以Rewarded为例
 ![image](imgs/003addadunit2RV1.png)
@@ -78,7 +78,7 @@ a. 目录中选择“[Mediation](https://apps.admob.com/v2/mediation/groups/list
 
 ![image](imgs/007mediationgroupcreate.png)
 
-b. 选择您要使用的广告形式及操作系统，ZPLAY Ads目前支持Interstitial及Rewarded video，此处以Rewarded video为例，点击“CONTINUE”进入下一步
+b. 选择您要使用的广告形式及操作系统，ZPLAY Ads目前支持Interstitial及Rewarded，此处以Rewarded为例，点击“CONTINUE”进入下一步
 
 ![image](imgs/008mediationgroupcreate1.png)
 

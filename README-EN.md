@@ -12,7 +12,7 @@ Using Android Studio as an example, here are some major steps. Please refer to [
 
 ### 1.1 Add ZPLAY Ads SDK Dependence
 
-Add ZPLAY Ads dependence in app Module:
+Add dependence in the build.gradle file of app module:
 
 ```
 dependencies {
@@ -39,7 +39,7 @@ allprojects {
     }
 }
 ```
-b. Add Admob dependence in app Module
+b. Add dependence in the build.gradle file of app module
 ```
 dependencies {
     compile 'com.google.android.gms:play-services-ads:15.0.1'
@@ -72,7 +72,7 @@ c. Enter your app information and choose a platform, and click "ADD" to add an a
 #### 2.2 Add New Ad Unit
 
 a. After you add an App, click "NEXT: CREATE AD UNIT" button to create an ad unit for this App
-![image](imgs/addunit.jpg)
+![image](imgs/addunit.png)
 
 b. Choose an ad format. ZPLAY Ads supports Interstitial and Rewarded now. Using Rewarded as an example. 
 ![image](imgs/003addadunit2RV1.png)
@@ -87,7 +87,7 @@ d. Get app ID and ad unit ID of this ad unit. Click "DONE" to accomplish ad unit
 a. Choose "[Mediation](https://apps.admob.com/v2/mediation/groups/list)" in the menu bar, and click "CREATE MEDIATION GROUP" button.
 ![img](imgs/007mediationgroupcreate.png)
 
-b. Choose ad format and platform. ZPLAY Ads supports Interstitial and Rewarded video now. Here take Rewarded video as an example. Click "CONTINUE" button to go on.
+b. Choose ad format and platform. ZPLAY Ads supports Interstitial and Rewarded now. Here take Rewarded as an example. Click "CONTINUE" button to go on.
 ![img](imgs/008mediationgroupcreate1.png)
 
 c. Fill in the name of Mediation and select locations to target. Mediation is only available when the status is Enabled, please make sure that status is Enabled. Click "ADD AD UNITS" to choose ad unit. 
