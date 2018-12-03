@@ -2,7 +2,7 @@
     * [1.1 添加ZPLAY Ads SDK依赖](#11-添加zplay-ads-sdk依赖)
     * [1.2 添加AdMob广告SDK依赖](#12-添加admob广告sdk依赖)
     * [1.3 将可玩Adapter导入到工程中](#13-将可玩adapter导入到工程中)
-* [2 在<a href="https://apps.admob.com/v2/home" rel="nofollow">AdMob平台</a>添加ZPLAY Ads广告源](#2-在admob平台添加zplay-ads广告源)
+* [2 在AdMob平台添加ZPLAY Ads广告源](#2-在admob平台添加zplay-ads广告源)
     * [2.1 添加新应用](#21-添加新应用)
     * [2.2 添加新广告位](#22-添加新广告位)
     * [2.3 添加ZPLAY Ads广告源](#23-添加zplay-ads广告源)
