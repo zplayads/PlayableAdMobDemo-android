@@ -1,19 +1,19 @@
-- [1 接入ZPLAY Ads SDK和AdMob SDK](#1-%E6%8E%A5%E5%85%A5zplay-ads-sdk%E5%92%8Cadmob-sdk)
-    - [1.1 添加ZPLAY Ads SDK依赖：](#11-%E6%B7%BB%E5%8A%A0zplay-ads-sdk%E4%BE%9D%E8%B5%96)
-    - [1.2 添加AdMob广告SDK依赖](#12-%E6%B7%BB%E5%8A%A0admob%E5%B9%BF%E5%91%8Asdk%E4%BE%9D%E8%B5%96)
-    - [1.3 将可玩Adapter导入到工程中](#13-%E5%B0%86%E5%8F%AF%E7%8E%A9adapter%E5%AF%BC%E5%85%A5%E5%88%B0%E5%B7%A5%E7%A8%8B%E4%B8%AD)
-- [2 在AdMob平台添加ZPLAY Ads广告源](#2-%E5%9C%A8admob%E5%B9%B3%E5%8F%B0%E6%B7%BB%E5%8A%A0zplay-ads%E5%B9%BF%E5%91%8A%E6%BA%90)
-    - [2.1 添加新应用](#21-%E6%B7%BB%E5%8A%A0%E6%96%B0%E5%BA%94%E7%94%A8)
-    - [2.2 添加新广告位](#22-%E6%B7%BB%E5%8A%A0%E6%96%B0%E5%B9%BF%E5%91%8A%E4%BD%8D)
-    - [2.3 添加ZPLAY Ads广告源](#23-%E6%B7%BB%E5%8A%A0zplay-ads%E5%B9%BF%E5%91%8A%E6%BA%90)
+* [1 接入ZPLAY Ads SDK和AdMob SDK](#1-接入zplay-ads-sdk和admob-sdk)
+    * [1.1 添加ZPLAY Ads SDK依赖](#11-添加zplay-ads-sdk依赖)
+    * [1.2 添加AdMob广告SDK依赖](#12-添加admob广告sdk依赖)
+    * [1.3 将可玩Adapter导入到工程中](#13-将可玩adapter导入到工程中)
+* [2 在AdMob平台添加ZPLAY Ads广告源](#2-在admob平台添加zplay-ads广告源)
+    * [2.1 添加新应用](#21-添加新应用)
+    * [2.2 添加新广告位](#22-添加新广告位)
+    * [2.3 添加ZPLAY Ads广告源](#23-添加zplay-ads广告源)
 
 ## 1 接入ZPLAY Ads SDK和AdMob SDK
 以Android Studio为例，接入AdMob请查看[AdMob SDK接入文档](https://developers.google.com/admob/android/quick-start)，以下简要步骤
-### 1.1 添加ZPLAY Ads SDK依赖：
+### 1.1 添加ZPLAY Ads SDK依赖
 在app Module的build.gradle文件中添加
 ```
 dependencies {
-    compile 'com.playableads:playableads:2.2.1'
+    compile 'com.playableads:playableads:2.3.0'
 }
 ```
 ### 1.2 添加AdMob广告SDK依赖
@@ -48,7 +48,7 @@ dependencies {
 > 关于适配类和请求的详细内容，请参考[DEMO](https://github.com/zplayads/PlayableAdMobDemo-android/tree/master/app/src/main/java/com/zplay/playable/playableadmobdemo)中的代码。
 
 ## 2 在[AdMob平台](https://apps.admob.com/v2/home)添加ZPLAY Ads广告源
-#### 2.1 添加新应用
+### 2.1 添加新应用
 a. 选择目录中Apps，点击“ADD APP”按钮
 ![image](imgs/018addapp1.png)
 
@@ -58,7 +58,7 @@ b. 选择您的应用是否已经上架Google Play或App Store，如果已上架
 c. 输入应用名称，选择应用操作系统，点击“ADD”保存添加的应用
 ![image](imgs/019addapp3.png)
 
-#### 2.2 添加新广告位
+### 2.2 添加新广告位
 a. 添加应用后，点击“NEXT: CREATE AD UNIT”按钮可为此应用添加广告位
 ![image](imgs/addunit.png)
 
@@ -73,7 +73,7 @@ d. 获取此广告位的app ID及ad unit ID，点击“DONE”完成广告位的
 
 ![image](imgs/005addadunit2RV3.png)
 
-#### 2.3 添加ZPLAY Ads广告源
+### 2.3 添加ZPLAY Ads广告源
 a. 目录中选择“[Mediation](https://apps.admob.com/v2/mediation/groups/list)”，选择“CREATE MEDIATION GROUP”
 
 ![image](imgs/007mediationgroupcreate.png)

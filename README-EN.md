@@ -16,7 +16,7 @@ Add dependence in the build.gradle file of app module:
 
 ```
 dependencies {
-    compile 'com.playableads:playableads:2.2.1'
+    compile 'com.playableads:playableads:2.3.0'
 }
 ```
 
@@ -58,7 +58,7 @@ Interstitial Adapter：[ZPLAYAdsAdMobInterstitialAdapter.java](./app/src/main/ja
 
 ## 2 Add ZPLAY Ads as a New Network on [AdMob](https://apps.admob.com/v2/home)
 
-#### 2.1 Add New App
+### 2.1 Add New App
 
 a. Click "Apps" in the menu bar, and then click "ADD APP" button. 
 ![image](imgs/018addapp1.png)
@@ -69,7 +69,7 @@ b. Choose whether your app has published in Google Play or App Store. If your Ap
 c. Enter your app information and choose a platform, and click "ADD" to add an app.
 ![image](imgs/019addapp3.png)
 
-#### 2.2 Add New Ad Unit
+### 2.2 Add New Ad Unit
 
 a. After you add an App, click "NEXT: CREATE AD UNIT" button to create an ad unit for this App
 ![image](imgs/addunit.png)
@@ -83,7 +83,7 @@ c. Fill in the name of Ad unit, then click "CREATE AD UNIT" to add ad unit.
 d. Get app ID and ad unit ID of this ad unit. Click "DONE" to accomplish ad unit creation.
 ![image](imgs/005addadunit2RV3.png)
 
-#### 2.3 Add ZPLAY Ads as a New Network on AdMob
+### 2.3 Add ZPLAY Ads as a New Network on AdMob
 a. Choose "[Mediation](https://apps.admob.com/v2/mediation/groups/list)" in the menu bar, and click "CREATE MEDIATION GROUP" button.
 ![img](imgs/007mediationgroupcreate.png)
 
