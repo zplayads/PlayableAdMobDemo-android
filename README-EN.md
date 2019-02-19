@@ -1,11 +1,11 @@
 - [1 Integrate ZPLAY Ads SDK and AdMob SDK](#1-integrate-zplay-ads-sdk-and-admob-sdk)
-    - [1.1 Add ZPLAY Ads SDK Dependence](#11-add-zplay-ads-sdk-dependence)
-    - [1.2 Add AdMob Ads SDK Dependence](#12-add-admob-ads-sdk-dependence)
-    - [1.3 Import ZPLAY Ads Adapter into project](#13-import-zplay-ads-adapter-into-project)
+  - [1.1 Add ZPLAY Ads SDK Dependence](#11-add-zplay-ads-sdk-dependence)
+  - [1.2 Add AdMob Ads SDK Dependence](#12-add-admob-ads-sdk-dependence)
+  - [1.3 Import ZPLAY Ads Adapter into project](#13-import-zplay-ads-adapter-into-project)
 - [2 Add ZPLAY Ads as a New Network on AdMob](#2-add-zplay-ads-as-a-new-network-on-admob)
-    - [2.1 Add New App](#21-add-new-app)
-    - [2.2 Add New Ad Unit](#22-add-new-ad-unit)
-    - [2.3 Add ZPLAY Ads as a New Network on AdMob](#23-add-zplay-ads-as-a-new-network-on-admob)
+  - [2.1 Add New App](#21-add-new-app)
+  - [2.2 Add New Ad Unit](#22-add-new-ad-unit)
+  - [2.3 Add ZPLAY Ads as a New Network on AdMob](#23-add-zplay-ads-as-a-new-network-on-admob)
 
 ## 1 Integrate ZPLAY Ads SDK and AdMob SDK
 Using Android Studio as an example, here are some major steps. Please refer to [AdMob SDK Integration Guide](https://developers.google.com/admob/android/quick-start) when integrate AdMob.
@@ -16,7 +16,7 @@ Add dependence in the build.gradle file of app module:
 
 ```
 dependencies {
-    compile 'com.playableads:playableads:2.3.0'
+    compile 'com.playableads:playableads:2.3.1'
 }
 ```
 
