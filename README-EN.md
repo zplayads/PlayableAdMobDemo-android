@@ -6,6 +6,7 @@
   - [2.1 Add New App](#21-add-new-app)
   - [2.2 Add New Ad Unit](#22-add-new-ad-unit)
   - [2.3 Add ZPLAY Ads as a New Network on AdMob](#23-add-zplay-ads-as-a-new-network-on-admob)
+- [3 Test](#3-Test)
 
 ## 1 Integrate ZPLAY Ads SDK and AdMob SDK
 Using Android Studio as an example, here are some major steps. Please refer to [AdMob SDK Integration Guide](https://developers.google.com/admob/android/quick-start) when integrate AdMob.
@@ -117,3 +118,11 @@ h. You can see ZPLAY Ads in Ad sources list. Click "SAVE" to complete ZPLAYAds c
 
 i. Check whether third-party ad source has been added successfully. In the [Apps list](https://sellers.zplayads.com/#/app/appList/), find the application and ad unit selected in step d. The active number in the "mediation groups" increased, indicating that the ad source is successfully configured.
 ![img](imgs/016mediationgroupcreate9.png)
+
+## 3 Test 
+You are available to use the following ID when testing your App (no charge). Please replace them with the ID you applied in [ZPLAY Ads](https://sellers.zplayads.com/) when you publish your App.
+
+|Ad Format|App_ID|Ad_Unit_id|
+|---|---|---|
+|Rewarded|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC|
+|Interstitial|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|19393189-C4EB-3886-60B9-13B39407064E|
