@@ -5,7 +5,9 @@
 * [2 在AdMob平台添加ZPLAY Ads广告源](#2-在admob平台添加zplay-ads广告源)
     * [2.1 添加新应用](#21-添加新应用)
     * [2.2 添加新广告位](#22-添加新广告位)
-    * [2.3 添加ZPLAY Ads广告源](#23-添加zplay-ads广告源)
+    * [2.3 添加ZPLAY Ads广告源](#23-添加zplay-ads广告源)    
+* [3 测试](#3-测试)
+
 
 ## 1 接入ZPLAY Ads SDK和AdMob SDK
 以Android Studio为例，接入AdMob请查看[AdMob SDK接入文档](https://developers.google.com/admob/android/quick-start)，以下简要步骤
@@ -116,3 +118,12 @@ h. Ad source列表中可以看到所设置的广告源ZPLAY Ads，点击“SAVE�
 i. 检查第三方广告源是否添加完成，在[Apps列表](https://apps.admob.com/v2/apps/list)中找到步骤d中选择的应用及广告位，广告位Mediation groups中active数量增加表示广告源添加成功
 
 ![image](imgs/016mediationgroupcreate9.png)
+
+## 3 测试
+
+您在测试中可使用如下ID进行测试，测试ID不会产生收益，应用上线时请使用您在[ZPLAY Ads](https://sellers.zplayads.com)申请的正式ID。
+
+| 广告形式 | App_ID                               | Ad_Unit_id                           |
+| -------- | ------------------------------------ | ------------------------------------ |
+| 激励视频 | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | 3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC |
+| 插屏广告 | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | 19393189-C4EB-3886-60B9-13B39407064E |
