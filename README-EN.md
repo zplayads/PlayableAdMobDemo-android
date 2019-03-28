@@ -17,7 +17,7 @@ Add dependence in the build.gradle file of app module:
 
 ```
 dependencies {
-    compile 'com.playableads:playableads:2.3.1'
+    compile 'com.playableads:playableads:2.4.0'
 }
 ```
 
@@ -43,7 +43,7 @@ allprojects {
 b. Add dependence in the build.gradle file of app module
 ```
 dependencies {
-    compile 'com.google.android.gms:play-services-ads:15.0.1'
+    compile 'com.google.android.gms:play-services-ads:17.2.0'
 }
 ```
 
