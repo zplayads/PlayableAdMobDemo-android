@@ -15,7 +15,7 @@
 在app Module的build.gradle文件中添加
 ```
 dependencies {
-    compile 'com.playableads:playableads:2.4.1'
+    implementation 'com.playableads:playableads:2.4.1'
 }
 ```
 ### 1.2 添加AdMob广告SDK依赖
@@ -38,7 +38,7 @@ allprojects {
 b. 在app Module的build.gradle文件中添加（可选）
 ```
 dependencies {
-    compile 'com.google.android.gms:play-services-ads:17.2.0'
+    implementation 'com.google.android.gms:play-services-ads:17.2.0'
 }
 ```
 
