@@ -17,7 +17,7 @@ Add dependence in the build.gradle file of app module:
 
 ```
 dependencies {
-    compile 'com.playableads:playableads:2.4.0'
+    compile 'com.playableads:playableads:2.4.1'
 }
 ```
 
