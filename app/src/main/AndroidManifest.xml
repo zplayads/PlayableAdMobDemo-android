@@ -18,7 +18,7 @@
             android:value="true" />
 
         <activity
-            android:name=".MainActivity"
+            android:name="com.yumiad.playable.admobsample.MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,12 +27,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".InterstitialActivity"
-            android:label="@string/title_activity_interstitial"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name="com.yumiad.playable.admobsample.BannerActivity"
+            android:label="@string/title_activity_banner"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".RewardedVideoActivity"
+            android:name="com.yumiad.playable.admobsample.InterstitialActivity"
+            android:label="@string/title_activity_interstitial"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.yumiad.playable.admobsample.RewardedVideoActivity"
             android:label="@string/title_activity_rewarded_video"
             android:screenOrientation="portrait" />
     </application>

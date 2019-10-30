@@ -2,20 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:padding="10dp">
 
     <Button
-        android:id="@+id/btn_RewardedVideoAD"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_BannerAD"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="RewardedVideoAD"
+        android:text="Banner Sample"
         android:textAllCaps="false" />
 
     <Button
         android:id="@+id/btn_InterstitialAD"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="InterstitialAD"
+        android:text="Interstitial Sample"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_RewardedVideoAD"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Rewarded Video Sample"
         android:textAllCaps="false" />
 </LinearLayout>
