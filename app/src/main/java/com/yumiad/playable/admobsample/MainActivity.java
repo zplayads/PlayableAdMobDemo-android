@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TAG = "MainActivity";
 
     static final String INTERSTITIAL_ID = "ca-app-pub-5451364651863658/6174288359";
-    static final String BANNER_ID = "ca-app-pub-5451364651863658/3431927093";
+    static final String BANNER_ID = "ca-app-pub-5451364651863658/8621903899";
     static final String VIDEO_ID = "ca-app-pub-5451364651863658/6193232902";
     private static final String APP_ID = "ca-app-pub-5451364651863658~6691926353";
 
