@@ -81,10 +81,6 @@ public class InterstitialActivity extends Activity {
     public void loadAd(View view) {
         mLogView.setText("");
         mProgressBar.setVisibility(View.VISIBLE);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED ||
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE}, 0);
-        }
         AdRequest req = new AdRequest.Builder().build();
         mInterstitialAd.loadAd(req);
         addLog("start loading ad");

@@ -41,10 +41,6 @@ public class RewardedVideoActivity extends Activity implements RewardedVideoAdLi
     public void loadAd(View view) {
         mLogView.setText("");
         mProgressBar.setVisibility(View.VISIBLE);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED ||
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE}, 0);
-        }
         AdRequest request = new AdRequest.Builder().build();
         mRewardedVideoAd.loadAd(VIDEO_ID, request);
         addLog("start loading ad");
