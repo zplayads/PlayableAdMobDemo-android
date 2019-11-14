@@ -1,4 +1,4 @@
-package com.zplay.playable.playableadmobdemo;
+package com.yumiad.playable.admobsample;
 
 import android.Manifest;
 import android.app.Activity;
@@ -12,13 +12,14 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
+import com.zplay.playable.playableadmobdemo.R;
+
+import static com.yumiad.playable.admobsample.MainActivity.INTERSTITIAL_ID;
 
 public class InterstitialActivity extends Activity {
 
     private static final String TAG = "InterstitialActivity";
-    private static final String AD_MOB_APP_ID = "ca-app-pub-5451364651863658~6691926353";
-    private static final String AD_MOB_AD_UNIT_ID = "ca-app-pub-5451364651863658/6174288359";
+
     View mProgressBar;
     TextView mLogView;
     private InterstitialAd mInterstitialAd;
@@ -69,9 +70,9 @@ public class InterstitialActivity extends Activity {
         mProgressBar = findViewById(R.id.loading_bar);
         mLogView = findViewById(R.id.log_text);
         if (mInterstitialAd == null) {
-            MobileAds.initialize(this, AD_MOB_APP_ID);
+
             mInterstitialAd = new InterstitialAd(this);
-            mInterstitialAd.setAdUnitId(AD_MOB_AD_UNIT_ID);
+            mInterstitialAd.setAdUnitId(INTERSTITIAL_ID);
             mInterstitialAd.setAdListener(adListener);
         }
     }
@@ -80,10 +81,6 @@ public class InterstitialActivity extends Activity {
     public void loadAd(View view) {
         mLogView.setText("");
         mProgressBar.setVisibility(View.VISIBLE);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED ||
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE}, 0);
-        }
         AdRequest req = new AdRequest.Builder().build();
         mInterstitialAd.loadAd(req);
         addLog("start loading ad");

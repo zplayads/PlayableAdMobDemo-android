@@ -1,4 +1,4 @@
-package com.zplay.playable.playableadmobdemo;
+package com.yumiad.playable.admobsample;
 
 import android.Manifest;
 import android.app.Activity;
@@ -14,11 +14,13 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+import com.zplay.playable.playableadmobdemo.R;
+
+import static com.yumiad.playable.admobsample.MainActivity.VIDEO_ID;
 
 public class RewardedVideoActivity extends Activity implements RewardedVideoAdListener {
     private static final String TAG = "MainActivity";
-    private static final String AD_MOB_APP_ID = "ca-app-pub-5451364651863658~6691926353";
-    private static final String AD_MOB_AD_UNIT_ID = "ca-app-pub-5451364651863658/6193232902";
+
     View mProgressBar;
     TextView mLogView;
     private RewardedVideoAd mRewardedVideoAd;
@@ -27,7 +29,6 @@ public class RewardedVideoActivity extends Activity implements RewardedVideoAdLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rewarded_video);
-        MobileAds.initialize(this, AD_MOB_APP_ID);
 
         mProgressBar = findViewById(R.id.loading_bar);
         mLogView = findViewById(R.id.log_text);
@@ -40,12 +41,8 @@ public class RewardedVideoActivity extends Activity implements RewardedVideoAdLi
     public void loadAd(View view) {
         mLogView.setText("");
         mProgressBar.setVisibility(View.VISIBLE);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED ||
-                ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE}, 0);
-        }
         AdRequest request = new AdRequest.Builder().build();
-        mRewardedVideoAd.loadAd(AD_MOB_AD_UNIT_ID, request);
+        mRewardedVideoAd.loadAd(VIDEO_ID, request);
         addLog("start loading ad");
     }
 

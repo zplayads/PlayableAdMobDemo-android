@@ -17,7 +17,7 @@ Add dependence in the build.gradle file of app module:
 
 ```
 dependencies {
-    implementation 'com.playableads:playableads:2.4.1'
+    implementation 'com.playableads:playableads:2.6.0'
 }
 ```
 
@@ -50,10 +50,13 @@ dependencies {
 About integrating of AdMob, please refers to [Official Documentation](https://developers.google.com/admob/android/quick-start#import_the_mobile_ads_sdk)
 
 ### 1.3 Import ZPLAY Ads Adapter into project 
+Bannder Adapter：[ZPLAYAdsBanner.java](./admobadapter/src/main/java/com/yumiad/admobadapter/ZPLAYAdsBanner.java)
 
-Rewarded Video Adapter：[ZPLAYAdsAdMobAdapter.java](./app/src/main/java/com/zplay/playable/playableadmobdemo/ZPLAYAdsAdMobAdapter.java)
+Interstitial Adapter：[ZPLAYAdsInterstitial.java](./admobadapter/src/main/java/com/yumiad/admobadapter/ZPLAYAdsInterstitial.java)
 
-Interstitial Adapter：[ZPLAYAdsAdMobInterstitialAdapter.java](./app/src/main/java/com/zplay/playable/playableadmobdemo/ZPLAYAdsAdMobInterstitialAdapter.java)
+Rewarded Video Adapter：[ZPLAYAdsRewardedVideo.java](./admobadapter/src/main/java/com/yumiad/admobadapter/ZPLAYAdsRewardedVideo.java)
+
+Util Class(which contains some common methods, such as parsing the json issued by AdMob, or converting the error code)：[ZPLAYAdsUtil.java](./admobadapter/src/main/java/com/yumiad/admobadapter/ZPLAYAdsUtil.java)
 
 > If you want to know more about Adapter and Request, please refer to the code sample in [DEMO](https://github.com/zplayads/PlayableAdMobDemo-android/tree/master/app/src/main/java/com/zplay/playable/playableadmobdemo).
 
@@ -103,15 +106,21 @@ e. Click "ADD CUSTOM EVENT" to add custom ad sources.
 f. Fill in the label of custom ad resource, using ZPLAYAds as an example, you can customize it and set floor price according to your needs. 
 ![img](imgs/013mediationgroupcreate6.png)
 
-g. Configure ZPLAY Ads ad source. Fill in full adapter class name in "Class Name" (as the following image shows, the class name in the picture is just a sample, please use the following adapter name), the Interstitial adapter name in demo is `com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobInterstitialAdapter`, and Rewarded Video adapter name in demo is `com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter`. There are should be two values separated by blank in "Parameter", the first one is the [App ID](https://sellers.zplayads.com/#/app/appList/) and the second one is the [Ad Unit ID](https://sellers.zplayads.com/#/ad/placeList/), which you applied on ZPLAY Ads. Please note that the order of these two values cannot be changed. Click "DONE" to complete configuration.
+g. Configure ZPLAY Ads ad source. Fill in full adapter class name in "Class Name" (as the following image shows, the class name in the picture is just a sample, please use the following adapter name), 
+
+Banner's adapter is 
+`com.yumiad.admobadapter.ZPLAYAdsBanner`, 
+
+Interstitial's adapter is `com.yumiad.admobadapter.ZPLAYAdsInterstitial`, 
+
+Rewarded Video's adapter is `com.yumiad.admobadapter.ZPLAYAdsRewardedVideo`. 
+
+You need fill in the appId and unitId into the Parameter box, the first one is the [App ID](https://sellers.zplayads.com/#/app/appList/) and the second one is the [Ad Unit ID](https://sellers.zplayads.com/#/ad/placeList/), which you applied on ZPLAY Ads. Click "DONE" to complete configuration.
+
+```json
+{"appId":"youAppId","unitId":"yourUnitId"}
+```
 ![img](imgs/014mediationgroupcreate7.png)
-
-Note: You are available to use the following ID when testing your App (no charge). Please replace them with the ID you applied in [ZPLAY Ads](https://sellers.zplayads.com/) when you publish your App.
-
-|Ad Format|App_ID|Ad_Unit_id|
-|---|---|---|
-|Rewarded|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC|
-|Interstitial|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|19393189-C4EB-3886-60B9-13B39407064E|
 
 h. You can see ZPLAY Ads in Ad sources list. Click "SAVE" to complete ZPLAYAds configuration.
 ![img](imgs/015mediationgroupcreate8.png)
@@ -124,5 +133,6 @@ You are available to use the following ID when testing your App (no charge). Ple
 
 |Ad Format|App_ID|Ad_Unit_id|
 |---|---|---|
+| Banner | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | F22F347B-3D57-0C70-0B13-EFCFDF402EBA |
 |Rewarded|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC|
 |Interstitial|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|19393189-C4EB-3886-60B9-13B39407064E|
