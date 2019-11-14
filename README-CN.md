@@ -15,7 +15,7 @@
 在app Module的build.gradle文件中添加
 ```
 dependencies {
-    implementation 'com.playableads:playableads:2.4.1'
+    implementation 'com.playableads:playableads:2.6.0'
 }
 ```
 ### 1.2 添加AdMob广告SDK依赖
@@ -43,9 +43,13 @@ dependencies {
 ```
 
 ### 1.3 将可玩Adapter导入到工程中
-激励视频Adapter：[ZPLAYAdsAdMobAdapter.java](./app/src/main/java/com/zplay/playable/playableadmobdemo/ZPLAYAdsAdMobAdapter.java)
+Bannder Adapter：[PlayableAdBanner.java](./admobadapter/src/main/java/com/yumiad/admobadapter/PlayableAdBanner.java)
 
-插屏Adapter：[ZPLAYAdsAdMobInterstitialAdapter.java](./app/src/main/java/com/zplay/playable/playableadmobdemo/ZPLAYAdsAdMobInterstitialAdapter.java)
+插屏Adapter：[PlayableAdInterstitial.java](./admobadapter/src/main/java/com/yumiad/admobadapter/PlayableAdInterstitial.java)
+
+激励视频Adapter：[PlayableAdRewardedVideo.java](./admobadapter/src/main/java/com/yumiad/admobadapter/PlayableAdRewardedVideo.java)
+
+工具类(包含解析 admob 后台配置的信息，转换错误码等功能)：[PlayableUtil.java](./admobadapter/src/main/java/com/yumiad/admobadapter/PlayableUtil.java)
 
 > 关于适配类和请求的详细内容，请参考[DEMO](https://github.com/zplayads/PlayableAdMobDemo-android/tree/master/app/src/main/java/com/zplay/playable/playableadmobdemo)中的代码。
 
@@ -100,16 +104,31 @@ f. 输入第三方广告源名称，此处以ZPLAYAds为例，可根据需求进
 
 ![image](imgs/013mediationgroupcreate6.png)
 
-g. 对ZPLAY Ads广告源进行配置。在Class Name中填写完整的适配器类名，以demo中适配器类名为例，插屏为`com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobInterstitialAdapter`，激励视频为`com.zplay.playable.playableadmobdemo.ZPLAYAdsAdMobAdapter`。Parameter中需填写您在ZPLAY Ads申请的[应用ID](https://sellers.zplayads.com/#/app/appList/)和[广告位ID](https://sellers.zplayads.com/#/ad/placeList/)两个参数，通过空格区分且顺序不可更改，点击“DONE”完成ZPLAY Ads的配置
+g. 对ZPLAY Ads广告源进行配置。在Class Name中填写完整的适配器类名，以demo中适配器类名为例，
 
+Banner为
+`com.yumiad.admobadapter.PlayableAdBanner`
+
+插屏为
+`com.yumiad.admobadapter.PlayableAdInterstitial`
+
+激励视频为
+`com.yumiad.admobadapter.PlayableAdRewardedVideo`
+
+Parameter中需填写您在ZPLAY Ads申请的[应用ID](https://sellers.zplayads.com/#/app/appList/)和[广告位ID](https://sellers.zplayads.com/#/ad/placeList/)两个参数，点击“DONE”完成ZPLAY Ads的配置
+
+```json
+{"appId":"youAppId","unitId":"yourUnitId"}
+```
 ![image](imgs/014mediationgroupcreate7.png)
 
 注：您在测试中可使用如下ID进行测试，测试ID不会产生收益，应用上线时请使用您在[ZPLAY Ads](https://sellers.zplayads.com)申请的正式ID。
 
 | 广告形式 | App_ID                               | Ad_Unit_id                           |
 | -------- | ------------------------------------ | ------------------------------------ |
-| 激励视频 | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | 3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC |
+| Banner广告 | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | F22F347B-3D57-0C70-0B13-EFCFDF402EBA |
 | 插屏广告 | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | 19393189-C4EB-3886-60B9-13B39407064E |
+| 激励视频 | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | 3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC |
 
 h. Ad source列表中可以看到所设置的广告源ZPLAY Ads，点击“SAVE”完成Mediation的配置
 
