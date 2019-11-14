@@ -15,16 +15,16 @@ import com.playableads.PlayableAds;
 import com.playableads.PlayableAdsSettings;
 
 /**
- * Description: PlayableAdRewardedVideo
+ * Description: ZPLAYAdsRewardedVideo
  * Created by lgd on 2017/12/4.
  */
 
 @SuppressWarnings("unused")
-public class PlayableAdRewardedVideo implements MediationRewardedVideoAdAdapter {
-    private static final String TAG = "PlayableAdRewardedVideo";
+public class ZPLAYAdsRewardedVideo implements MediationRewardedVideoAdAdapter {
+    private static final String TAG = "ZPLAYAdsRewardedVideo";
     private PlayableAds playableAds;
     private MediationRewardedVideoAdListener mRewardedVideoEventForwarder;
-    private PlayableUtil.PlayableParams params;
+    private ZPLAYAdsUtil.PlayableParams params;
     @Override
     public void initialize(Context context, MediationAdRequest mediationAdRequest, String s, MediationRewardedVideoAdListener mediationRewardedVideoAdListener, Bundle serverParameters, Bundle bundle1) {
         Log.d(TAG, "initialize");
@@ -34,19 +34,19 @@ public class PlayableAdRewardedVideo implements MediationRewardedVideoAdAdapter 
             return;
         }
 
-        params = new PlayableUtil.PlayableParams(serverParameters.getString(CUSTOM_EVENT_SERVER_PARAMETER_FIELD));
+        params = new ZPLAYAdsUtil.PlayableParams(serverParameters.getString(CUSTOM_EVENT_SERVER_PARAMETER_FIELD));
 
         Log.d(TAG, "requestReadPhoneState: " + params.requestReadPhoneState);
         PlayableAdsSettings.enableAutoRequestPermissions(params.requestReadPhoneState);
         Log.d(TAG, "gdprState: " + params.gdprState);
-        PlayableUtil.setGDPRConsent(params.gdprState);
+        ZPLAYAdsUtil.setGDPRConsent(params.gdprState);
 
         playableAds = PlayableAds.init(context, params.appId);
         playableAds.setAutoLoadAd(params.autoLoad);
         playableAds.setChannelId(params.channelId);
         playableAds.enableAutoRequestPermissions(params.requestReadPhoneState);
         mRewardedVideoEventForwarder = mediationRewardedVideoAdListener;
-        mRewardedVideoEventForwarder.onInitializationSucceeded(PlayableAdRewardedVideo.this);
+        mRewardedVideoEventForwarder.onInitializationSucceeded(ZPLAYAdsRewardedVideo.this);
     }
 
     @Override
@@ -64,13 +64,13 @@ public class PlayableAdRewardedVideo implements MediationRewardedVideoAdAdapter 
             @Override
             public void onLoadFinished() {
                 Log.d(TAG, "onLoadFinished");
-                mRewardedVideoEventForwarder.onAdLoaded(PlayableAdRewardedVideo.this);
+                mRewardedVideoEventForwarder.onAdLoaded(ZPLAYAdsRewardedVideo.this);
             }
 
             @Override
             public void onLoadFailed(int code, String errorMsg) {
                 Log.e(TAG, "onLoadFailed code: " + code + ", errorMsg: " + errorMsg);
-                mRewardedVideoEventForwarder.onAdFailedToLoad(PlayableAdRewardedVideo.this, 0);
+                mRewardedVideoEventForwarder.onAdFailedToLoad(ZPLAYAdsRewardedVideo.this, 0);
             }
         });
     }
@@ -78,41 +78,41 @@ public class PlayableAdRewardedVideo implements MediationRewardedVideoAdAdapter 
     @Override
     public void showVideo() {
         if (playableAds.canPresentAd(params.unitId)) {
-            mRewardedVideoEventForwarder.onAdOpened(PlayableAdRewardedVideo.this);
+            mRewardedVideoEventForwarder.onAdOpened(ZPLAYAdsRewardedVideo.this);
             playableAds.presentPlayableAD(params.unitId, new PlayLoadingListener() {
 
                 @Override
                 public void onVideoStart() {
                     Log.d(TAG, "onVideoStart");
-                    mRewardedVideoEventForwarder.onVideoStarted(PlayableAdRewardedVideo.this);
+                    mRewardedVideoEventForwarder.onVideoStarted(ZPLAYAdsRewardedVideo.this);
                 }
 
                 @Override
                 public void onVideoFinished() {
                     Log.d(TAG, "onVideoFinished");
-                    mRewardedVideoEventForwarder.onVideoCompleted(PlayableAdRewardedVideo.this);
+                    mRewardedVideoEventForwarder.onVideoCompleted(ZPLAYAdsRewardedVideo.this);
                 }
 
                 @Override
                 public void onLandingPageInstallBtnClicked() {
                     Log.d(TAG, "onLandingPageInstallBtnClicked");
-                    mRewardedVideoEventForwarder.onAdClicked(PlayableAdRewardedVideo.this);
+                    mRewardedVideoEventForwarder.onAdClicked(ZPLAYAdsRewardedVideo.this);
                 }
 
                 public void playableAdsIncentive() {
                     Log.d(TAG, "playableAdsIncentive");
-                    mRewardedVideoEventForwarder.onRewarded(PlayableAdRewardedVideo.this, null);
+                    mRewardedVideoEventForwarder.onRewarded(ZPLAYAdsRewardedVideo.this, null);
                 }
 
                 @Override
                 public void onAdClosed() {
                     Log.d(TAG, "onAdClosed");
-                    mRewardedVideoEventForwarder.onAdClosed(PlayableAdRewardedVideo.this);
+                    mRewardedVideoEventForwarder.onAdClosed(ZPLAYAdsRewardedVideo.this);
                 }
 
                 public void onAdsError(int var1, String var2) {
                     Log.e(TAG, "present onAdsError code: " + var1 + ", errorMsg: " + var2);
-                    mRewardedVideoEventForwarder.onAdFailedToLoad(PlayableAdRewardedVideo.this, 0);
+                    mRewardedVideoEventForwarder.onAdFailedToLoad(ZPLAYAdsRewardedVideo.this, 0);
                 }
 
             });

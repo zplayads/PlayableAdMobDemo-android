@@ -21,8 +21,8 @@ import com.playableads.presenter.widget.AtmosBannerView;
  * <p>
  * Created by lgd on 2019-07-18.
  */
-public class PlayableAdBanner implements CustomEventBanner {
-    private static final String TAG = "PlayableAdBanner";
+public class ZPLAYAdsBanner implements CustomEventBanner {
+    private static final String TAG = "ZPLAYAdsBanner";
 
     AtmosplayAdsBanner mBanner;
 
@@ -35,12 +35,12 @@ public class PlayableAdBanner implements CustomEventBanner {
             return;
         }
 
-        PlayableUtil.PlayableParams params = new PlayableUtil.PlayableParams(s);
+        ZPLAYAdsUtil.PlayableParams params = new ZPLAYAdsUtil.PlayableParams(s);
 
         Log.d(TAG, "requestReadPhoneState: " + params.requestReadPhoneState);
         PlayableAdsSettings.enableAutoRequestPermissions(params.requestReadPhoneState);
         Log.d(TAG, "gdprState: " + params.gdprState);
-        PlayableUtil.setGDPRConsent(params.gdprState);
+        ZPLAYAdsUtil.setGDPRConsent(params.gdprState);
 
         mBanner = new AtmosplayAdsBanner(context, params.appId, params.unitId);
         mBanner.setBannerSize(calculateAdSize(adSize));

@@ -14,11 +14,11 @@ import com.playableads.PlayableAdsSettings;
 import com.playableads.PlayableInterstitial;
 import com.playableads.SimplePlayLoadingListener;
 
-public class PlayableAdInterstitial implements CustomEventInterstitial {
-    private static final String TAG = "PlayableAdInterstitial";
+public class ZPLAYAdsInterstitial implements CustomEventInterstitial {
+    private static final String TAG = "ZPLAYAdsInterstitial";
     private PlayableInterstitial interstitial;
     private CustomEventInterstitialListener mMediationInterstitialListener;
-    private PlayableUtil.PlayableParams params;
+    private ZPLAYAdsUtil.PlayableParams params;
 
     @Override
     public void requestInterstitialAd(Context context, CustomEventInterstitialListener listener, String serverParameter, MediationAdRequest mediationAdRequest, Bundle customEventExtras) {
@@ -29,12 +29,12 @@ public class PlayableAdInterstitial implements CustomEventInterstitial {
                 listener.onAdFailedToLoad(AdRequest.ERROR_CODE_INVALID_REQUEST);
                 return;
             }
-            params = new PlayableUtil.PlayableParams(serverParameter);
+            params = new ZPLAYAdsUtil.PlayableParams(serverParameter);
 
             Log.d(TAG, "requestReadPhoneState: " + params.requestReadPhoneState);
             PlayableAdsSettings.enableAutoRequestPermissions(params.requestReadPhoneState);
             Log.d(TAG, "gdprState: " + params.gdprState);
-            PlayableUtil.setGDPRConsent(params.gdprState);
+            ZPLAYAdsUtil.setGDPRConsent(params.gdprState);
 
             interstitial = PlayableInterstitial.init(context, params.appId);
             interstitial.setAutoload(params.autoLoad);

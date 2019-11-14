@@ -11,8 +11,8 @@ import org.json.JSONObject;
 
 import static android.text.TextUtils.isEmpty;
 
-public class PlayableUtil {
-    private static final String TAG = "PlayableUtil";
+public class ZPLAYAdsUtil {
+    private static final String TAG = "ZPLAYAdsUtil";
 
     static void setGDPRConsent(String gdprConsentState) {
         if (TextUtils.equals("NON_PERSONALIZED", gdprConsentState)) {

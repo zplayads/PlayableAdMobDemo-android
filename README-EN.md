@@ -50,13 +50,13 @@ dependencies {
 About integrating of AdMob, please refers to [Official Documentation](https://developers.google.com/admob/android/quick-start#import_the_mobile_ads_sdk)
 
 ### 1.3 Import ZPLAY Ads Adapter into project 
-Bannder Adapter：[PlayableAdBanner.java](./admobadapter/src/main/java/com/yumiad/admobadapter/PlayableAdBanner.java)
+Bannder Adapter：[ZPLAYAdsBanner.java](./admobadapter/src/main/java/com/yumiad/admobadapter/ZPLAYAdsBanner.java)
 
-Interstitial Adapter：[PlayableAdInterstitial.java](./admobadapter/src/main/java/com/yumiad/admobadapter/PlayableAdInterstitial.java)
+Interstitial Adapter：[ZPLAYAdsInterstitial.java](./admobadapter/src/main/java/com/yumiad/admobadapter/ZPLAYAdsInterstitial.java)
 
-Rewarded Video Adapter：[PlayableAdRewardedVideo.java](./admobadapter/src/main/java/com/yumiad/admobadapter/PlayableAdRewardedVideo.java)
+Rewarded Video Adapter：[ZPLAYAdsRewardedVideo.java](./admobadapter/src/main/java/com/yumiad/admobadapter/ZPLAYAdsRewardedVideo.java)
 
-Util Class(which contains some common methods, such as parsing the json issued by AdMob, or converting the error code)：[PlayableUtil.java](./admobadapter/src/main/java/com/yumiad/admobadapter/PlayableUtil.java)
+Util Class(which contains some common methods, such as parsing the json issued by AdMob, or converting the error code)：[ZPLAYAdsUtil.java](./admobadapter/src/main/java/com/yumiad/admobadapter/ZPLAYAdsUtil.java)
 
 > If you want to know more about Adapter and Request, please refer to the code sample in [DEMO](https://github.com/zplayads/PlayableAdMobDemo-android/tree/master/app/src/main/java/com/zplay/playable/playableadmobdemo).
 
@@ -109,11 +109,11 @@ f. Fill in the label of custom ad resource, using ZPLAYAds as an example, you ca
 g. Configure ZPLAY Ads ad source. Fill in full adapter class name in "Class Name" (as the following image shows, the class name in the picture is just a sample, please use the following adapter name), 
 
 Banner's adapter is 
-`com.yumiad.admobadapter.PlayableAdBanner`, 
+`com.yumiad.admobadapter.ZPLAYAdsBanner`, 
 
-Interstitial's adapter is `com.yumiad.admobadapter.PlayableAdInterstitial`, 
+Interstitial's adapter is `com.yumiad.admobadapter.ZPLAYAdsInterstitial`, 
 
-Rewarded Video's adapter is `com.yumiad.admobadapter.PlayableAdRewardedVideo`. 
+Rewarded Video's adapter is `com.yumiad.admobadapter.ZPLAYAdsRewardedVideo`. 
 
 You need fill in the appId and unitId into the Parameter box, the first one is the [App ID](https://sellers.zplayads.com/#/app/appList/) and the second one is the [Ad Unit ID](https://sellers.zplayads.com/#/ad/placeList/), which you applied on ZPLAY Ads. Click "DONE" to complete configuration.
 

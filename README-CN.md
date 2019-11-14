@@ -43,13 +43,13 @@ dependencies {
 ```
 
 ### 1.3 将可玩Adapter导入到工程中
-Bannder Adapter：[PlayableAdBanner.java](./admobadapter/src/main/java/com/yumiad/admobadapter/PlayableAdBanner.java)
+Bannder Adapter：[ZPLAYAdsBanner.java](./admobadapter/src/main/java/com/yumiad/admobadapter/ZPLAYAdsBanner.java)
 
-插屏Adapter：[PlayableAdInterstitial.java](./admobadapter/src/main/java/com/yumiad/admobadapter/PlayableAdInterstitial.java)
+插屏Adapter：[ZPLAYAdsInterstitial.java](./admobadapter/src/main/java/com/yumiad/admobadapter/ZPLAYAdsInterstitial.java)
 
-激励视频Adapter：[PlayableAdRewardedVideo.java](./admobadapter/src/main/java/com/yumiad/admobadapter/PlayableAdRewardedVideo.java)
+激励视频Adapter：[ZPLAYAdsRewardedVideo.java](./admobadapter/src/main/java/com/yumiad/admobadapter/ZPLAYAdsRewardedVideo.java)
 
-工具类(包含解析 admob 后台配置的信息，转换错误码等功能)：[PlayableUtil.java](./admobadapter/src/main/java/com/yumiad/admobadapter/PlayableUtil.java)
+工具类(包含解析 admob 后台配置的信息，转换错误码等功能)：[ZPLAYAdsUtil.java](./admobadapter/src/main/java/com/yumiad/admobadapter/ZPLAYAdsUtil.java)
 
 > 关于适配类和请求的详细内容，请参考[DEMO](https://github.com/zplayads/PlayableAdMobDemo-android/tree/master/app/src/main/java/com/zplay/playable/playableadmobdemo)中的代码。
 
@@ -107,13 +107,13 @@ f. 输入第三方广告源名称，此处以ZPLAYAds为例，可根据需求进
 g. 对ZPLAY Ads广告源进行配置。在Class Name中填写完整的适配器类名，以demo中适配器类名为例，
 
 Banner为
-`com.yumiad.admobadapter.PlayableAdBanner`
+`com.yumiad.admobadapter.ZPLAYAdsBanner`
 
 插屏为
-`com.yumiad.admobadapter.PlayableAdInterstitial`
+`com.yumiad.admobadapter.ZPLAYAdsInterstitial`
 
 激励视频为
-`com.yumiad.admobadapter.PlayableAdRewardedVideo`
+`com.yumiad.admobadapter.ZPLAYAdsRewardedVideo`
 
 Parameter中需填写您在ZPLAY Ads申请的[应用ID](https://sellers.zplayads.com/#/app/appList/)和[广告位ID](https://sellers.zplayads.com/#/ad/placeList/)两个参数，点击“DONE”完成ZPLAY Ads的配置
 
