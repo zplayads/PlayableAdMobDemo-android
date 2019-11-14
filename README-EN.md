@@ -122,14 +122,6 @@ You need fill in the appId and unitId into the Parameter box, the first one is t
 ```
 ![img](imgs/014mediationgroupcreate7.png)
 
-Note: You are available to use the following ID when testing your App (no charge). Please replace them with the ID you applied in [ZPLAY Ads](https://sellers.zplayads.com/) when you publish your App.
-
-|Ad Format|App_ID|Ad_Unit_id|
-|---|---|---|
-| Banner | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | F22F347B-3D57-0C70-0B13-EFCFDF402EBA |
-|Interstitial|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|19393189-C4EB-3886-60B9-13B39407064E|
-|Rewarded|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC|
-
 h. You can see ZPLAY Ads in Ad sources list. Click "SAVE" to complete ZPLAYAds configuration.
 ![img](imgs/015mediationgroupcreate8.png)
 
@@ -141,5 +133,6 @@ You are available to use the following ID when testing your App (no charge). Ple
 
 |Ad Format|App_ID|Ad_Unit_id|
 |---|---|---|
+| Banner | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | F22F347B-3D57-0C70-0B13-EFCFDF402EBA |
 |Rewarded|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC|
 |Interstitial|5C5419C7-A2DE-88BC-A311-C3E7A646F6AF|19393189-C4EB-3886-60B9-13B39407064E|

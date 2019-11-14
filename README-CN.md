@@ -122,14 +122,6 @@ Parameter中需填写您在ZPLAY Ads申请的[应用ID](https://sellers.zplayads
 ```
 ![image](imgs/014mediationgroupcreate7.png)
 
-注：您在测试中可使用如下ID进行测试，测试ID不会产生收益，应用上线时请使用您在[ZPLAY Ads](https://sellers.zplayads.com)申请的正式ID。
-
-| 广告形式 | App_ID                               | Ad_Unit_id                           |
-| -------- | ------------------------------------ | ------------------------------------ |
-| Banner广告 | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | F22F347B-3D57-0C70-0B13-EFCFDF402EBA |
-| 插屏广告 | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | 19393189-C4EB-3886-60B9-13B39407064E |
-| 激励视频 | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | 3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC |
-
 h. Ad source列表中可以看到所设置的广告源ZPLAY Ads，点击“SAVE”完成Mediation的配置
 
 ![image](imgs/015mediationgroupcreate8.png)
@@ -144,5 +136,6 @@ i. 检查第三方广告源是否添加完成，在[Apps列表](https://apps.adm
 
 | 广告形式 | App_ID                               | Ad_Unit_id                           |
 | -------- | ------------------------------------ | ------------------------------------ |
+| Banner广告 | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | F22F347B-3D57-0C70-0B13-EFCFDF402EBA |
 | 激励视频 | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | 3FBEFA05-3A8B-2122-24C7-A87D0BC9FEEC |
 | 插屏广告 | 5C5419C7-A2DE-88BC-A311-C3E7A646F6AF | 19393189-C4EB-3886-60B9-13B39407064E |
